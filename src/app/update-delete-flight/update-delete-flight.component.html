@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "bookingformbox">
+        <div class="booking-form">
+            
+              <label>Search</label>
+              <input type="text" class="form-control" placeholder="Flight Name/Number">
+            
+            <div class="flights">
+                <button class="btn btn-primary" type="submit" (click)="Showflights()">Search Flight</button>
+                <div *ngIf= 'showflight'>
+                    <app-showflights></app-showflights>
+                    </div>
+            </div>
+    </div>
+    </div>
+    
+</body>
+<app-footer></app-footer>
+</html>

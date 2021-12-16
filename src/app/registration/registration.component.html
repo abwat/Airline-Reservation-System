@@ -1,0 +1,103 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register">
+                <form #f="ngForm" >
+                    <div class="row">
+                        <div class="col-md-3 register-left">
+                            <br>
+                            <br>
+                            <br>
+                            <!-- https://image.ibb.co/n7oTvU/logo_white.png -->
+                            <img src="../../assets/img/AirlineLogo_White.png" alt=""/>
+                            <h3>Welcome</h3>
+    
+                            <p>Already have an account?</p>
+                            <a routerLink="/login" class="btn btn-warning">Login</a>    
+                        
+                        </div>
+                        
+                        <div class="col-md-9 register-right">
+    
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <h3 class="register-heading">Customer Details</h3>
+                                    <div class="row register-form">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input required [(ngModel)]="customer.name" #name="ngModel" name="name" type="text" class="form-control" placeholder="Full Name *" value="" />
+                                            </div>
+
+                                            <div class="alert alert-danger" *ngIf="name.touched && name.invalid"> 
+                                                <div *ngIf="name.errors?.['required']">Name is required</div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input required [(ngModel)]="customer.address" #address="ngModel" name="address" type="text" class="form-control" placeholder="Address *" value="" />
+                                            </div>
+
+                                            <div class="alert alert-danger" *ngIf="address.touched && address.invalid"> 
+                                                <div *ngIf="address.errors?.['required']">Address is required</div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <input required [(ngModel)]="customer.password" #password="ngModel" name="password" type="password" class="form-control" placeholder="Password *" value="" />
+                                            </div>
+
+                                            <div class="alert alert-danger" *ngIf="password.touched && password.invalid"> 
+                                                <div *ngIf="password.errors?.['required']">Password is required</div>
+                                            </div>
+    
+                                            <div class="form-group">
+                                                <div class="maxl">
+                                                    <label class="radio inline"> 
+                                                        <input [(ngModel)]="customer.gender"   name="male" type="radio" name="gender" value="male"  >
+                                                        <span class="pe-2"> Male </span> 
+                                                       
+                                                    </label>
+                                                    <label class="radio inline"> 
+                                                        <input [(ngModel)]="customer.gender" name="female" type="radio" type="radio" name="gender" value="female">
+                                                        <span> Female </span> 
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input required [(ngModel)]="customer.emailId" #email="ngModel" name="email" type="email" class="form-control" placeholder="Your Email *" value="" />
+                                            </div>
+
+                                            <div class="alert alert-danger" *ngIf="email.touched && email.invalid"> 
+                                                <div *ngIf="email.errors?.['required']">Email is required</div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input required [(ngModel)]="customer.phonenumber" #phone="ngModel" name="phone" type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
+                                            </div>
+                                            
+                                            <div class="alert alert-danger" *ngIf="phone.touched && phone.invalid"> 
+                                                Enter a valid Number
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input required [(ngModel)]="customer.age" #age="ngModel" name="age" type="number" class="form-control"  placeholder="Your Age *" value="" max="150" min="0"/>
+                                            </div>
+
+                                            <div class="alert alert-danger" *ngIf="age.touched && age.invalid"> 
+                                                Enter a valid Age
+                                            </div>
+                                            
+                                            <button class=" btn btn-primary" [disabled]='f.invalid' (click)="register()"> Register</button>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+    
+                </form>
+            </div>
