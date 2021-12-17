@@ -20,6 +20,13 @@ public class Flight {
 	private String status;
 	private int availableEconomySeats;
 	private int availableBussinessSeats;
+	private int price;
+	
+//	format=dd-mm-yy
+	private String date;
+	
+//	format= hh:mm:ss
+	private String time;
 	
 	@OneToMany
 	private List<Booking> booking;
@@ -28,10 +35,10 @@ public class Flight {
 		super();
 	}
 	
-	
-	
+
 	public Flight(long flightId, String flightname, String source, String destination, String status,
-			int availableEconomySeats, int availableBussinessSeats, List<Booking> booking) {
+			int availableEconomySeats, int availableBussinessSeats, int price, String date, String time,
+			List<Booking> booking) {
 		super();
 		this.flightId = flightId;
 		this.flightname = flightname;
@@ -40,9 +47,41 @@ public class Flight {
 		this.status = status;
 		this.availableEconomySeats = availableEconomySeats;
 		this.availableBussinessSeats = availableBussinessSeats;
+		this.price = price;
+		this.date = date;
+		this.time = time;
 		this.booking = booking;
 	}
 
+
+	public int getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+
+	public String getDate() {
+		return date;
+	}
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+
+	public String getTime() {
+		return time;
+	}
+
+
+	public void setTime(String time) {
+		this.time = time;
+	}
 
 
 	public long getFlightId() {

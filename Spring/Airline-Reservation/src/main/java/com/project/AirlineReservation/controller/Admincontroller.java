@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.AirlineReservation.model.Admin;
+import com.project.AirlineReservation.model.Flight;
 import com.project.AirlineReservation.model.User;
 import com.project.AirlineReservation.repository.AdminRepository;
+import com.project.AirlineReservation.repository.FlightRepo;
 import com.project.AirlineReservation.repository.UserRepository;
 
 @CrossOrigin
@@ -69,11 +71,19 @@ public class Admincontroller {
 	}
 	
 	//Admin get flights
-	
+	@Autowired
+	private FlightRepo flightrepo;
+	@GetMapping("/getFlights")
+	public List<Flight> getflights(){
+		return flightrepo.findAll();
+	}
 	
 	
 //	Admin add flight
-	
+	@PostMapping("/addFlights")
+	public Flight addflight(@RequestBody Flight f){
+		return flightrepo.save(f);
+	}
 	
 	
 //	delete flights
