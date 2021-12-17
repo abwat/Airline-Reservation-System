@@ -12,6 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 
 @Configuration
@@ -33,6 +35,7 @@ public class UserSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		@Override
 		protected void configure(HttpSecurity http)throws Exception{
+			http.cors();
 			http.csrf().disable();
 			http.authorizeRequests()
 			.antMatchers("/admin/*").permitAll()

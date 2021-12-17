@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +20,7 @@ import com.project.AirlineReservation.model.User;
 import com.project.AirlineReservation.repository.AdminRepository;
 import com.project.AirlineReservation.repository.UserRepository;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/admin/")
 public class Admincontroller {

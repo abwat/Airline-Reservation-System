@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 import { LoginService } from '../service/login.service';
 
 @Component({
@@ -11,7 +12,6 @@ import { LoginService } from '../service/login.service';
 export class LoginComponent implements OnInit {
   emailId:string='';
   password:string='';
-  
   
   isError:boolean=true;
   constructor(private loginserv: LoginService,private router : Router) { }
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         {
           this.isError=true;
           // this.router.navigate(['/TicketBook']);
-         // console.log(data)
+          console.log(data)
         }
       },
       err=>{
