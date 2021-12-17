@@ -13,7 +13,8 @@ public class Flight {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long flightId;
+	private long flightid;
+	
 	private String flightname;
 	private String source;
 	private String destination;
@@ -22,25 +23,16 @@ public class Flight {
 	private int availableBussinessSeats;
 	private int price;
 	
-//	format=dd-mm-yy
-	private String date;
-	
-//	format= hh:mm:ss
-	private String time;
-	
 	@OneToMany
 	private List<Booking> booking;
 	
 	public Flight() {
 		super();
 	}
-	
-
-	public Flight(long flightId, String flightname, String source, String destination, String status,
-			int availableEconomySeats, int availableBussinessSeats, int price, String date, String time,
-			List<Booking> booking) {
+	public Flight(long flightid, String flightname, String source, String destination, String status,
+			int availableEconomySeats, int availableBussinessSeats, int price) {
 		super();
-		this.flightId = flightId;
+		this.flightid = flightid;
 		this.flightname = flightname;
 		this.source = source;
 		this.destination = destination;
@@ -48,47 +40,12 @@ public class Flight {
 		this.availableEconomySeats = availableEconomySeats;
 		this.availableBussinessSeats = availableBussinessSeats;
 		this.price = price;
-		this.date = date;
-		this.time = time;
-		this.booking = booking;
 	}
-
-
-	public int getPrice() {
-		return price;
+	public long getFlightid() {
+		return flightid;
 	}
-
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
-
-	public String getDate() {
-		return date;
-	}
-
-
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-
-	public String getTime() {
-		return time;
-	}
-
-
-	public void setTime(String time) {
-		this.time = time;
-	}
-
-
-	public long getFlightId() {
-		return flightId;
-	}
-	public void setFlightId(long flightId) {
-		this.flightId = flightId;
+	public void setFlightid(long flightid) {
+		this.flightid = flightid;
 	}
 	public String getFlightname() {
 		return flightname;
@@ -123,20 +80,16 @@ public class Flight {
 	public int getAvailableBussinessSeats() {
 		return availableBussinessSeats;
 	}
-	public void setAvailableBussiSeats(int availableBussinessSeats) {
+	public void setAvailableBussinessSeats(int availableBussinessSeats) {
 		this.availableBussinessSeats = availableBussinessSeats;
 	}
-
-
-
-	public List<Booking> getBooking() {
-		return booking;
+	public int getPrice() {
+		return price;
 	}
-
-
-
-	public void setBooking(List<Booking> booking) {
-		this.booking = booking;
+	public void setPrice(int price) {
+		this.price = price;
 	}
+	
+	
 	
 }

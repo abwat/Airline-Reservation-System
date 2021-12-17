@@ -1,20 +1,28 @@
 package com.project.AirlineReservation.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.AirlineReservation.Exceptions.ResourceNotFoundException;
 import com.project.AirlineReservation.model.Admin;
 import com.project.AirlineReservation.model.Flight;
 import com.project.AirlineReservation.model.User;
@@ -73,22 +81,52 @@ public class Admincontroller {
 	//Admin get flights
 	@Autowired
 	private FlightRepo flightrepo;
-	@GetMapping("/getFlights")
+	@GetMapping("/getflights")
 	public List<Flight> getflights(){
 		return flightrepo.findAll();
 	}
 	
 	
 //	Admin add flight
-	@PostMapping("/addFlights")
+	@PostMapping("/addflights")
 	public Flight addflight(@RequestBody Flight f){
 		return flightrepo.save(f);
 	}
 	
 	
 //	delete flights
+	@DeleteMapping("/deleteflight/{flightid}")
+	public ResponseEntity<Map<String ,Boolean>> deleteFlight(@PathVariable Long flightid){
+		Flight f=flightrepo.findByFlightid(flightid);
+		if (f==null) {
+			throw new ResourceNotFoundException("not found");
+		}
+		flightrepo.delete(f);
+		Map<String,Boolean> response=new HashMap();
+		response.put("deleted", Boolean.TRUE);
+		return ResponseEntity.ok(response);
+	}
+	
+	
+//	update flight status
+	@PutMapping("/updateflight/{flightid}")
+	public ResponseEntity<Flight> updateflightStatus(@PathVariable Long flightid,@RequestBody Flight flight){
+		
+		Flight f=flightrepo.findByFlightid(flightid);
+		if (f==null) {
+			throw new ResourceNotFoundException("not found");
+		}
+		f.setStatus(flight.getStatus());
+		flightrepo.save(f);
+		return ResponseEntity.ok(f);
+	}
 	
 	
 	
-//	update flights
+//	search flight
+	@GetMapping("/flight/{name}")
+	public ResponseEntity<List<Flight>> getFlightByName(@PathVariable String name){
+		List<Flight> fs=flightrepo.findByFlightname(name);
+		return ResponseEntity.ok(fs);
+	}
 }
