@@ -13,13 +13,15 @@ public class Flight {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long flightId;
+	private long flightid;
+	
 	private String flightname;
 	private String source;
 	private String destination;
 	private String status;
 	private int availableEconomySeats;
 	private int availableBussinessSeats;
+	private int price;
 	
 	@OneToMany
 	private List<Booking> booking;
@@ -27,29 +29,23 @@ public class Flight {
 	public Flight() {
 		super();
 	}
-	
-	
-	
-	public Flight(long flightId, String flightname, String source, String destination, String status,
-			int availableEconomySeats, int availableBussinessSeats, List<Booking> booking) {
+	public Flight(long flightid, String flightname, String source, String destination, String status,
+			int availableEconomySeats, int availableBussinessSeats, int price) {
 		super();
-		this.flightId = flightId;
+		this.flightid = flightid;
 		this.flightname = flightname;
 		this.source = source;
 		this.destination = destination;
 		this.status = status;
 		this.availableEconomySeats = availableEconomySeats;
 		this.availableBussinessSeats = availableBussinessSeats;
-		this.booking = booking;
+		this.price = price;
 	}
-
-
-
-	public long getFlightId() {
-		return flightId;
+	public long getFlightid() {
+		return flightid;
 	}
-	public void setFlightId(long flightId) {
-		this.flightId = flightId;
+	public void setFlightid(long flightid) {
+		this.flightid = flightid;
 	}
 	public String getFlightname() {
 		return flightname;
@@ -84,20 +80,16 @@ public class Flight {
 	public int getAvailableBussinessSeats() {
 		return availableBussinessSeats;
 	}
-	public void setAvailableBussiSeats(int availableBussinessSeats) {
+	public void setAvailableBussinessSeats(int availableBussinessSeats) {
 		this.availableBussinessSeats = availableBussinessSeats;
 	}
-
-
-
-	public List<Booking> getBooking() {
-		return booking;
+	public int getPrice() {
+		return price;
 	}
-
-
-
-	public void setBooking(List<Booking> booking) {
-		this.booking = booking;
+	public void setPrice(int price) {
+		this.price = price;
 	}
+	
+	
 	
 }
