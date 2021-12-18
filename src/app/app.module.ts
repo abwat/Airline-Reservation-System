@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

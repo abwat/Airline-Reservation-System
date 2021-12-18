@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  loop:boolean=true;
+  auto:boolean=true;
   constructor() { }
 
   ngOnInit(): void {
+
+
+
   }
 
 }
