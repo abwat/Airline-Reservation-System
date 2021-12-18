@@ -50,4 +50,15 @@
 #main{
   background: #020202;
 }
+#date
+{
+  color: #958c7c;
+}
+::-webkit-calendar-picker-indicator {
+  /* filter: invert(1); */
+  background-color: #958c7c}
+
+  h4{
+    color: white;
+  }
 

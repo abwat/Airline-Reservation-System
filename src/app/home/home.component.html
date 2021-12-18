@@ -21,8 +21,8 @@
     <!-- ======= Header ======= -->
     <header id="header">
       <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-  
-        <h1 class="logo me-auto me-lg-0"><a href="#">AEROTOR</a></h1>
+        <img src="../../assets/img/AirlineLogo_White.png" style="height: 70px; width: 70px">
+        <h1 class="logo me-auto me-lg-0"> <a href="">AEROTOR</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
   
@@ -37,8 +37,8 @@
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
-        <a href="#" class="book-a-table-btn scrollto d-none d-lg-flex " style="margin-left: 200px;">Log in</a>
-        <a href="#" class="book-a-table-btn scrollto d-none d-lg-flex" style="margin-left: 60px;">Admin Login</a>
+        <a href="#" class="book-a-table-btn scrollto d-none d-lg-flex " style="margin-left: 0px;">Log in</a>
+        <a href="#" class="book-a-table-btn scrollto d-none d-lg-flex" style="margin-left: 0px;">Admin Login</a>
   
       </div>
     </header><!-- End Header -->
@@ -69,7 +69,8 @@
       <!-- ======= About Section ======= -->
       <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-  
+          <br>
+          <br>
           <div class="row">
             <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
               <div class="about-img">
@@ -77,20 +78,21 @@
               </div>
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" style="color: aliceblue;">
-              <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-              <p class="fst-italic" >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+              <h3 style="color: #cda45e;">Why book with AEROTOR?</h3>
+              <p class="fw-bold" >
+                Book Flights for Holiday Packages
               </p>
               <ul>
-                <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                <li><i class="bi bi-check-circle"></i> Book a flight ticket for any domestic Airlines</li>
+                <li><i class="bi bi-check-circle"></i> Get the cheapest flight</li>
+                <li><i class="bi bi-check-circle"></i> Book ticket and get exciting offers</li>
               </ul>
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
+                On AEROTOR, you can tailor your trip from end-to-end by scouring suitable 
+                flights and making your flight booking before proceeding with your hotel 
+                bookings. AEROTOR’s vast flight repository will see you through this process
+                seamlessly. Look up well-researched holiday packages, sift through cruise 
+                packages and finalise your entire trip on just one platform.
               </p>
             </div>
           </div>
@@ -223,47 +225,31 @@
         <div class="container" data-aos="fade-up">
   
           <div class="section-title">
+            <br>
+            <br>
             <h2>Reservation</h2>
-            <p>Book a Table</p>
+            <br>
+            <p>Search a Flight</p>
           </div>
   
-          <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+          <form role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
             <div class="row">
               <div class="col-lg-4 col-md-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                <input type="text" name="source" class="form-control" id="source" placeholder="Source Station" >
                 <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination Station" >
                 <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                <input type="date" class="form-control" name="date" id="date" placeholder="Journey Date">
                 <div class="validate"></div>
               </div>
-              <div class="col-lg-4 col-md-6 form-group mt-3">
-                <input type="text" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                <div class="validate"></div>
-              </div>
-              <div class="col-lg-4 col-md-6 form-group mt-3">
-                <input type="text" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                <div class="validate"></div>
-              </div>
-              <div class="col-lg-4 col-md-6 form-group mt-3">
-                <input type="number" class="form-control" name="people" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
-                <div class="validate"></div>
-              </div>
+              
+              <div class="text-center py-5 pt-5"><button type="submit">Search a Flight</button></div>
             </div>
-            <div class="form-group mt-3">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-              <div class="validate"></div>
-            </div>
-            <div class="mb-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Book a Table</button></div>
+
           </form>
   
         </div>
@@ -277,6 +263,7 @@
   
         <div class="container" data-aos="fade-up">
           <div class="section-title">
+            <br>
             <br>
             <h2>Gallery</h2>
             <p>Places you would like to visit </p>
@@ -356,11 +343,12 @@
         </div>
       </section><!-- End Gallery Section -->
   
-      <!-- ======= Chefs Section ======= -->
+      <!-- ======= Developer Section ======= -->
       <section id="chefs" class="chefs">
         <div class="container" data-aos="fade-up">
             <br>
           <div class="section-title">
+            <br>         
             <h2>Developers</h2>
             <p>Our Developers</p>
           </div>
@@ -431,13 +419,15 @@
         <div class="container" data-aos="fade-up">
   
           <div class="section-title">
+            <br>
+    
             <h2>Contact</h2>
             <p>Contact Us</p>
           </div>
         </div>
   
         <div data-aos="fade-up">
-          <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+          <iframe style="border:0; padding: 0 30px 0 30px; width: 100%; height: 350px;" src="https://maps.google.com/maps?width=720&amp;height=600&amp;hl=en&amp;q=9a,%20Aryabhata-Pingala,%2012,%20Kashibai%20Khilare%20Path,%20Marg,%20Erandwane,%20Pune,%20Maharashtra%20411004+(Aerotor)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0" allowfullscreen></iframe>
         </div>
   
         <div class="container" data-aos="fade-up">
@@ -449,7 +439,10 @@
                 <div class="address">
                   <i class="bi bi-geo-alt"></i>
                   <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>9a, Aryabhata-Pingala, <br> 12,
+                     Kashibai Khilare Path,
+                    <br> Marg, Erandwane, Pune, 
+                    <br> Maharashtra 411004</p>
                 </div>
   
                 <div class="open-hours">
@@ -457,7 +450,7 @@
                   <h4>Open Hours:</h4>
                   <p>
                     Monday-Saturday:<br>
-                    11:00 AM - 2300 PM
+                    11:00 AM - 23:00 PM
                   </p>
                 </div>
   
