@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  loop:boolean=true;
-  auto:boolean=true;
-  constructor() { }
+  Flights:any;
+  constructor(private service: LoginService) { }
 
   ngOnInit(): void {
-
-
+    this.service.getAllFlightDeatils().subscribe(data=>{
+      this.Flights=data;
+      console.log(data);      
+    })
 
   }
 

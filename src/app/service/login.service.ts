@@ -31,4 +31,9 @@ export class LoginService {
     return this.http.post(this.url+"admin/AdminHome",admin,{headers:{"Content-Type": "application/json"}})
   }
 
+  getAllFlightDeatils()
+  {
+    return this.http.get(this.url+"auth/getflights",{headers:{"Content-Type": "application/json"}})
+  }
+
 }
