@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 
@@ -39,9 +40,9 @@ public class UserSecurityConfig extends WebSecurityConfigurerAdapter{
 			http.csrf().disable();
 			http.authorizeRequests()
 			.antMatchers("/admin/**").permitAll()
-			.antMatchers("/auth/register")
-			.permitAll()
-			.antMatchers("/user/home").hasAuthority("USER")
+			.antMatchers("/auth/**").permitAll()
+//			.antMatchers("/user/home").hasAuthority("USER")
+			.antMatchers("/user/**").hasAuthority("USER")
 			.anyRequest().authenticated().and().httpBasic();
 		}
 		

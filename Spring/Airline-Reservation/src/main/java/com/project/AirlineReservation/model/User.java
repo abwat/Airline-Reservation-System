@@ -1,7 +1,9 @@
 package com.project.AirlineReservation.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,8 +30,8 @@ public class User {
 	
 	private long phonenumber;
 	
-	@OneToMany
-	private List<Booking> booking;
+	@OneToMany(mappedBy="user",cascade=CascadeType.REMOVE)
+	private List<Booking> booking=new ArrayList<Booking>();
 	
 	
 	
@@ -103,14 +105,5 @@ public class User {
 		this.phonenumber = phonenumber;
 	}
 
-
-	public List<Booking> getBooking() {
-		return booking;
-	}
-
-
-	public void setBooking(List<Booking> booking) {
-		this.booking = booking;
-	}
 	
 }
