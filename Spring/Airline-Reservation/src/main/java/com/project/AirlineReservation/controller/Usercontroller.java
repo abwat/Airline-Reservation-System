@@ -60,6 +60,12 @@ public class Usercontroller{
 	}
 	
 	
-	
+//	get by source and destination
+	@GetMapping("get/{source}/{destination}/{date}")
+	public List<Flight> searchFlights(@PathVariable String source,
+			@PathVariable String destination,@PathVariable String date){
+		List<Flight> f=flightrepo.findBySourceAndDestination(source, destination,date);
+		return f;
+	}
 	
 }

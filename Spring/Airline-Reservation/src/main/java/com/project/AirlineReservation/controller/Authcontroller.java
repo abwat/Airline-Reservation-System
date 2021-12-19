@@ -7,6 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,4 +45,14 @@ public class Authcontroller {
 	public List<Flight> getflights(){
 		return flightrepo.findAll();
 	}
+	
+	
+//	 get flight by source and destination
+	@GetMapping("get/{source}/{destination}/{date}")
+	public List<Flight> searchFlights(@PathVariable String source,
+			@PathVariable String destination,@PathVariable String date){
+		List<Flight> f=flightrepo.findBySourceAndDestination(source, destination,date);
+		return f;
+	}
 }
+
