@@ -6,5 +6,6 @@ import com.project.AirlineReservation.model.User;
 
 public interface UserRepository extends JpaRepository<User,Long>{
 
+	User findByUserId(Long userId);
 	User findByEmailId(String emailId);
 }
