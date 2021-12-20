@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,12 +37,14 @@ public class Usercontroller{
 	
 	@Autowired
 	private FlightRepo flightrepo;
+		
 	
 	@GetMapping("/home")
-	public int login() {
-		return 200;
+	public long login() {
+		Authentication auth=SecurityContextHolder.getContext().getAuthentication();
+		User u=userrepo.findByEmailId(auth.getName());
+		return u.getUserId();
 	}
-	
 	
 //	user books flight
 	@PostMapping("/{userid}/book/{flightid}")
@@ -48,6 +52,11 @@ public class Usercontroller{
 			@PathVariable Long flightid,@RequestBody Booking b ){
 		User u=userrepo.findByUserId(userid);
 		Flight f=flightrepo.findByFlightid(flightid);
+		int economy=b.getBookedEconomySeats();
+		int business=b.getBookedBussinessSeats();
+		f.setAvailableEconomySeats(f.getAvailableEconomySeats()-economy);
+		f.setAvailableBussinessSeats(f.getAvailableBussinessSeats()-business);
+		flightrepo.save(f);
 		b.setFlight(f);
 		b.setUser(u);
 		return bookingrepo.save(b);
