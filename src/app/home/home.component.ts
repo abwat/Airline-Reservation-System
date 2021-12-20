@@ -9,6 +9,7 @@ import { LoginService } from '../service/login.service';
 export class HomeComponent implements OnInit {
 
   Flights:any;
+  SeachedFlights:any;
   constructor(private service: LoginService) { }
 
   ngOnInit(): void {
@@ -17,7 +18,16 @@ export class HomeComponent implements OnInit {
       console.log(data);      
     })
 
-
   }
+  SeachFlight(source: any, destination: any, date: any)
+  {
+    this.service.GetSearchedFlight(source,destination,date).subscribe(data=>{
+        this.SeachedFlights=data;
+    })
+      //console.log(source,destination,date);
+  }
+
+  
  
 }
+

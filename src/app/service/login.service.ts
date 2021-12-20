@@ -36,4 +36,10 @@ export class LoginService {
     return this.http.get(this.url+"auth/getflights",{headers:{"Content-Type": "application/json"}})
   }
 
+  GetSearchedFlight(source: any,destination: any,date: any)
+  {
+    return this.http.get(this.url+"auth/get/"+source+"/"+destination+"/"+date);
+    //auth/get/Pune/Delhi/10-12-2021
+  }
+
 }
