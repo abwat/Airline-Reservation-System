@@ -1,20 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+      <!-- ======= Book A Table Section ======= -->
+      <section id="book-a-table" class="book-a-table">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            <br>
+            
+            <h2>Welcome Admin..</h2>
+            <br>
+            <p>Search a Flight</p>
+          </div>
+  
+          <form role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 form-group">
+                <input type="text" name="source" class="form-control" id="source" placeholder="Source Station" >
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination Station" >
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                <input placeholder="Select Date" type="date" class="form-control" name="date" required>
+                <div class="validate"></div>
+              </div>
+              
+              <div class="text-center py-5 pt-5 h4">
+                  <button type="submit" (click) = onpress()>Search a Flight</button>
+                  
+                  <div id="render show flights" *ngIf="display">
+                      <br>
+                    <app-showflights></app-showflights>
+                    
+                </div>
+                </div>
+              <div class="text-center py-5 pt-5 h4">
+                <button type="submit" >Add Flight</button>
+                
     
-    <h3>Welcome Admin</h3>
-    <div id="container">
-        <button type="button" id = "button1" class="btn btn-primary" (click)="onAdd()">Add Flight</button>
+              </div>
+              
+            </div>
+          </form>
+          
+        </div>
 
-        <button type="button" id = "button2" class="btn btn-primary" (click)="onUpdateDelete()">Update/Delete Flight</button>
-
-    </div>
-</body>
-</html>
-<app-footer></app-footer>
+        
+        
+      </section><!-- End Book A Table Section -->
+  

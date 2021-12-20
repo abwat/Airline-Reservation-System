@@ -21,4 +21,9 @@ export class WelcomeAdminComponent implements OnInit {
   {
     this.router.navigate(["/update-delete-flight"]);
   }
+  display = false;
+  onpress()
+  {
+    this.display = true;
+  }
 }
