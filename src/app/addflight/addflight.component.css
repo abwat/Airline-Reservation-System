@@ -25,7 +25,7 @@ body{
 }
 input::placeholder
 {
-    color: white !important;
+    color: #958c7c !important;
     
 }
 .inputgrp1
@@ -55,4 +55,10 @@ input::placeholder
 }
 p,label{
     color: #cda45e;
+}
+
+
+::-webkit-calendar-picker-indicator {
+    /* filter: invert(1); */
+    background-color: #958c7c
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdminServiceService } from '../service/admin-service.service';
 
 @Component({
   selector: 'app-addflight',
@@ -7,12 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddflightComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: AdminServiceService,private router: Router) { }
 
   ngOnInit(): void {
-  }
-  Addflight()
-  {
     
+  }
+  Addflight(id:any,name:any,src:any,dest:any,status:any,date:any,price:any,eseat:any,bseat:any,time:any)
+  {
+    console.log(id,name,dest,status,date,price,eseat,bseat);
+    this.service.AddFlight(id,name,src,dest,status,date,price,eseat,bseat,time).subscribe(data=>{
+      console.log("new Flight", data);
+      alert("New Flight Added");
+    })
+    window.location.reload();
   }
 }
