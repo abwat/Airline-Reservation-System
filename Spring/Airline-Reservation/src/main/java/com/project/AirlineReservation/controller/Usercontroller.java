@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.AirlineReservation.model.Booking;
+import com.project.AirlineReservation.model.BookingResponseModel;
 import com.project.AirlineReservation.model.Flight;
 import com.project.AirlineReservation.model.User;
 import com.project.AirlineReservation.repository.BookingRepository;
@@ -39,6 +40,9 @@ public class Usercontroller{
 	private FlightRepo flightrepo;
 		
 	
+	
+	private BookingResponseModel br=new BookingResponseModel();
+	
 	@GetMapping("/home")
 	public long login() {
 		Authentication auth=SecurityContextHolder.getContext().getAuthentication();
@@ -48,7 +52,7 @@ public class Usercontroller{
 	
 //	user books flight
 	@PostMapping("/{userid}/book/{flightid}")
-	public Booking book(@PathVariable Long userid,
+	public BookingResponseModel book(@PathVariable Long userid,
 			@PathVariable Long flightid,@RequestBody Booking b ){
 		User u=userrepo.findByUserId(userid);
 		Flight f=flightrepo.findByFlightid(flightid);
@@ -59,8 +63,26 @@ public class Usercontroller{
 		flightrepo.save(f);
 		b.setFlight(f);
 		b.setUser(u);
-		return bookingrepo.save(b);
+		bookingrepo.save(b);
+		
+		br.setBookingId(b.getBookingId());
+		br.setFlightid(flightid);
+		br.setFlightname(f.getFlightname());
+		br.setBookedBussinessSeats(business);
+		br.setBookedEconomySeats(economy);
+		br.setSource(f.getSource());
+		br.setDestination(f.getDestination());
+		br.setUsername(u.getName());
+		return br;
 	}
+	
+//	show all my active booking
+	@GetMapping("/bookings/{userid}")
+	public List<Booking> showallBookings(@PathVariable Long userid) {
+		List<Booking> b=bookingrepo.findAllByUser(userid);
+		return b;
+	}
+	
 	
 //	get all flights
 	@GetMapping("/getflights")
