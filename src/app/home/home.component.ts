@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
 
   Flights:any;
   SeachedFlights:any;
+  isSearched:boolean=true;
   constructor(private service: LoginService) { }
 
   ngOnInit(): void {
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   {
     this.service.GetSearchedFlight(source,destination,date).subscribe(data=>{
         this.SeachedFlights=data;
+        this.isSearched=false
     })
       //console.log(source,destination,date);
   }
