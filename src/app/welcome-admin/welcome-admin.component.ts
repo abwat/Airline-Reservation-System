@@ -13,17 +13,20 @@ export class WelcomeAdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  addflight = false;
   onAdd()
   {
-    this.router.navigate(["/addflight"]);
+    this.addflight = true;
   }
+
   onUpdateDelete()
   {
     this.router.navigate(["/update-delete-flight"]);
   }
-  display = false;
+  displayflights = false;
   onpress()
   {
-    this.display = true;
+    this.displayflights = true;
   }
 }

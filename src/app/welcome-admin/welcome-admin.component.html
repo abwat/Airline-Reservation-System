@@ -1,3 +1,17 @@
+ <!-- ======= Header ======= -->
+ <header id="header">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+      <img src="../../assets/img/AirlineLogo_White.png" style="height: 70px; width: 70px">
+      <h1 class="logo me-auto me-lg-0"> <a href="">AEROTOR</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      
+      
+      <a href="/adminLogin" class="book-a-table-btn scrollto d-none d-lg-flex" style="margin-left: 0px;">Logout</a>
+
+    </div>
+  </header><!-- End Header -->
 
       <!-- ======= Book A Table Section ======= -->
       <section id="book-a-table" class="book-a-table">
@@ -29,14 +43,18 @@
               <div class="text-center py-5 pt-5 h4">
                   <button type="submit" (click) = onpress()>Search a Flight</button>
                   
-                  <div id="render show flights" *ngIf="display">
+                  <div id="render show flights" *ngIf="displayflights">
                       <br>
                     <app-showflights></app-showflights>
                     
                 </div>
                 </div>
               <div class="text-center py-5 pt-5 h4">
-                <button type="submit" >Add Flight</button>
+                <button type="submit" (click) = onAdd()>Add Flight</button>
+                <div id="render show flights" *ngIf="addflight">
+                    <br>
+                  <app-addflight></app-addflight>
+                  </div>
                 
     
               </div>

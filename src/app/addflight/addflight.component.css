@@ -1,6 +1,6 @@
 body{
     
-    background-image: url('src/assets/bg.jfif');
+    background-color: transparent;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -25,7 +25,7 @@ body{
 }
 input::placeholder
 {
-    color: black !important;
+    color: white !important;
     
 }
 .inputgrp1
@@ -52,4 +52,7 @@ input::placeholder
     margin-top: 20px;
     width:150px;
     margin-bottom: 45px;
+}
+p,label{
+    color: #cda45e;
 }
