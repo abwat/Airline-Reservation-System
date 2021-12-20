@@ -103,7 +103,7 @@
       </section><!-- End About Section -->
   
   
-      <!-- ======= Menu Section ======= -->
+      <!-- ======= All Flight Section ======= -->
       <section id="menu" class="menu section-bg">
         <div class="container" data-aos="fade-up">
   
@@ -141,10 +141,10 @@
           </table>
   
         </div>
-      </section><!-- End Menu Section -->
+      </section><!-- End All Flight Section -->
   
   
-      <!-- ======= Book A Table Section ======= -->
+      <!-- ======= Search a Flight Section ======= -->
       <section id="book-a-table" class="book-a-table">
         <div class="container" data-aos="fade-up">
   
@@ -159,25 +159,49 @@
           <form role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
             <div class="row">
               <div class="col-lg-4 col-md-6 form-group">
-                <input type="text" name="source" class="form-control" id="source" placeholder="Source Station" >
+                <input type="text" name="source" class="form-control" id="source" placeholder="Source Station" #source>
                 <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination Station" >
+                <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination Station" #destination >
                 <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                <input type="date" class="form-control" name="date" id="date" placeholder="Journey Date">
+                <input type="date" class="form-control" name="date" id="date" placeholder="Journey Date" #date>
                 <div class="validate"></div>
               </div>
               
-              <div class="text-center py-5 pt-5 h4"><button type="submit">Search a Flight</button></div>
+              <div class="text-center py-5 pt-5 h4"><button type="submit" (click)="SeachFlight(source.value, destination.value, date.value)">Search a Flight</button></div>
             </div>
 
           </form>
-  
+          
+          <table class="table table-dark table-striped table-hover h4" >
+            <thead>
+              <tr style="color: #cda45e;">
+                <th scope="col">Flight Name</th>
+                <th scope="col">Source</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Price</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+               </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let flight of SeachedFlights" >
+                
+                <td style="color: rgb(187, 189, 184);">{{flight.flightname}}</td>
+                <td style="color: rgb(187, 189, 184);">{{flight.source}}</td>
+                <td style="color: rgb(187, 189, 184);">{{flight.destination}}</td>
+                <td style="color: rgb(187, 189, 184);">{{flight.price}}</td>
+                <td style="color: rgb(187, 189, 184);">{{flight.date}}</td>
+                <td style="color: rgb(187, 189, 184);">{{flight.time}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </section><!-- End Book A Table Section -->
+
+      </section><!-- End Search a Flight Section -->
   
       <!-- ======= Testimonials Section ======= -->
        <section class="container" id="testimonials" >
@@ -624,10 +648,13 @@
   
             <div class="col-lg-3 col-md-6">
               <div class="footer-info">
-                <h3>Restaurantly</h3>
+                <h3>AEROTOR</h3>
                 <p>
-                  A108 Adam Street <br>
-                  NY 535022, USA<br><br>
+                  9a, Aryabhata-Pingala,<br>
+                  12, Kashibai Khilare Path,<br>
+                  Marg, Erandwane, Pune,<br>
+                  Maharashtra 411004 <br>
+                  <br>
                   <strong>Phone:</strong> +1 5589 55488 55<br>
                   <strong>Email:</strong> info@example.com<br>
                 </p>
@@ -666,9 +693,7 @@
             <div class="col-lg-4 col-md-6 footer-newsletter">
               <h4>Our Newsletter</h4>
               <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-              <form action="" method="post">
-                <input type="email" name="email"><input type="submit" value="Subscribe">
-              </form>
+             
   
             </div>
   
@@ -678,14 +703,11 @@
   
       <div class="container">
         <div class="copyright">
-          &copy; Copyright <strong><span>Restaurantly</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>AEROTOR</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+         
+          Designed by <a href="#">Group-2</a>
         </div>
       </div>
     </footer><!-- End Footer -->
