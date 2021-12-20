@@ -151,6 +151,7 @@
           <div class="section-title">
             <br>
             <br>
+            <br>
             <h2>Reservation</h2>
             <br>
             <p>Search a Flight</p>
@@ -176,7 +177,8 @@
 
           </form>
           
-          <table class="table table-dark table-striped table-hover h4" >
+          <table class="table table-dark table-striped table-hover h4" 
+          [style.visibility]="isSearched ? 'hidden' : 'visible' ">
             <thead>
               <tr style="color: #cda45e;">
                 <th scope="col">Flight Name</th>
@@ -199,6 +201,9 @@
               </tr>
             </tbody>
           </table>
+          <div *ngIf="isError">
+            <p style="color: peachpuff; font-size: 18px; text-align: center;">No Data Found</p>
+          </div>
         </div>
 
       </section><!-- End Search a Flight Section -->

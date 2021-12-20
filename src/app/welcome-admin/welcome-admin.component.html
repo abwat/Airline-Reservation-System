@@ -1,20 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h3>Welcome Admin</h3>
-    <div id="container">
-        <button type="button" id = "button1" class="btn btn-primary" (click)="onAdd()">Add Flight</button>
+ <!-- ======= Header ======= -->
+ <header id="header">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+      <img src="../../assets/img/AirlineLogo_White.png" style="height: 70px; width: 70px">
+      <h1 class="logo me-auto me-lg-0"> <a href="">AEROTOR</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-        <button type="button" id = "button2" class="btn btn-primary" (click)="onUpdateDelete()">Update/Delete Flight</button>
+      
+      
+      <a href="/adminLogin" class="book-a-table-btn scrollto d-none d-lg-flex" style="margin-left: 0px;">Logout</a>
 
     </div>
-</body>
-</html>
-<app-footer></app-footer>
+  </header><!-- End Header -->
+
+      <!-- ======= Book A Table Section ======= -->
+      <section id="book-a-table" class="book-a-table">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            <br>
+            
+            <h2>Welcome Admin..</h2>
+            <br>
+            <p>Search a Flight</p>
+          </div>
+  
+          <form role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 form-group">
+                <input type="text" name="source" class="form-control" id="source" placeholder="Source Station" #source>
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination Station" #destination>
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                <input placeholder="Select Date" type="date" class="form-control" name="date" required #date>
+                <div class="validate"></div>
+              </div>
+              
+              <div class="text-center py-5 pt-5 h4">
+                  <button type="submit" (click) = onpress(source.value,destination.value,date.value)>Search a Flight</button>
+                  
+                  <div id="render show flights" *ngIf="displayflights">
+                      <br>
+                    <!-- <app-showflights></app-showflights> -->
+                    <table class="table table-dark table-striped table-hover h4" >
+                    <thead>
+                      <tr style="color: #cda45e; font-size: 18px;" >
+                        <th scope="col">Flight Name</th>
+                        <th scope="col">Source</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let flight of SeachedFlights" style="font-size: 18px;" >
+                        
+                        <td style="color: rgb(187, 189, 184);">{{flight.flightname}}</td>
+                        <td style="color: rgb(187, 189, 184);">{{flight.source}}</td>
+                        <td style="color: rgb(187, 189, 184);">{{flight.destination}}</td>
+                        <td style="color: rgb(187, 189, 184);">{{flight.price}}</td>
+                        <td style="color: rgb(187, 189, 184);">{{flight.date}}</td>
+                        <td style="color: rgb(187, 189, 184);">{{flight.time}}</td>
+                      </tr>
+                    </tbody>
+                    </table>
+                    
+                </div>
+                  <div *ngIf="isError">
+
+                    <br>
+                    <br>
+                    <p style="color: peachpuff;">No Data Found</p>
+                  </div>
+              </div>
+              <div class="text-center py-5 pt-5 h4">
+                <button type="submit" (click) = onAdd()>Add Flight</button>
+                <div id="render show flights" *ngIf="addflight">
+                    <br>
+                  <app-addflight></app-addflight>
+                  </div>
+                
+    
+              </div>
+              
+            </div>
+          </form>
+          
+        </div>
+
+        
+        
+      </section><!-- End Book A Table Section -->
+  
