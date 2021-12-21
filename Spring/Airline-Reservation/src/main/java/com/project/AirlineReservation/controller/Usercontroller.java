@@ -1,6 +1,8 @@
 package com.project.AirlineReservation.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.AirlineReservation.Exceptions.ResourceNotFoundException;
 import com.project.AirlineReservation.model.Booking;
 import com.project.AirlineReservation.model.BookingResponseModel;
 import com.project.AirlineReservation.model.Flight;
@@ -52,7 +56,6 @@ public class Usercontroller{
 	
 //	user books flight
 	
-//	different way
 	
 	@PostMapping("/{userid}/book/{flightid}")
 	public Booking book(@PathVariable Long userid,
@@ -93,4 +96,32 @@ public class Usercontroller{
 		return f;
 	}
 	
+//	get flight by flightid
+	
+	@GetMapping("/getflight/{flightid}")
+	public Flight getbyflightId(@PathVariable Long flightid){
+		Flight f= flightrepo.findById(flightid).orElseThrow(
+				()->new ResourceNotFoundException("Not a user"));
+		return f;
+	}
+	
+//	get user details
+	@GetMapping("/getuser/{userid}")
+	public User getbyuserid(@PathVariable Long userid){
+		User u=userrepo.findById(userid).orElseThrow(
+				()->new ResourceNotFoundException("Not a user"));
+		return u;
+	}
+	
+	
+//	delete booking
+	@DeleteMapping("/deletebooking/{bookingid}")
+	public ResponseEntity<Map<String ,Boolean>> deleteBooking(@PathVariable Long bookingid){
+		 Booking b=bookingrepo.findById(bookingid).orElseThrow(
+				()->new ResourceNotFoundException("Not a user"));
+		 bookingrepo.delete(b);
+			Map<String,Boolean> response=new HashMap();
+			response.put("deleted", Boolean.TRUE);
+			return ResponseEntity.ok(response);
+	}
 }

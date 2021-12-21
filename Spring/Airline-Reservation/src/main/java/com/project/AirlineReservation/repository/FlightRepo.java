@@ -15,7 +15,6 @@ public interface FlightRepo extends JpaRepository<Flight, Long> {
 	List<Flight> findByFlightname(String flightname);
 	Flight findByFlightid(long flightid);
 	
-	
 	@Query("SELECT f FROM Flight f WHERE f.source=?1 AND f.destination=?2 AND f.date=?3")
 	List<Flight> findBySourceAndDestination(String source,String destination,String date);
 

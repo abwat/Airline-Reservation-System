@@ -25,7 +25,7 @@ public class Flight {
 	private int availableBussinessSeats;
 	private int price;
 	
-//	format dd-mm-yy
+//	format yy-mm-dd
 	private String date;
 	
 //	format hh-mm-ss
