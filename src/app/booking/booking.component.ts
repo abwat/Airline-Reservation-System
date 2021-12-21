@@ -11,9 +11,6 @@ import { UserService } from '../service/user.service';
 export class BookingComponent implements OnInit {
   
   both:boolean=true;
-  UserEmail:any;
-  UserId:any;
-  UserPassword:any;
   SeachedFlights: any;
   isError: boolean=false;
   
@@ -34,19 +31,14 @@ export class BookingComponent implements OnInit {
   BookFlight(flightid:any,Bseat:any,Eseat:any)
   {
    // console.log("fllightid",flightid,Bseat,Eseat);
-     this.UserId=localStorage.getItem("UserId");
-     this.UserEmail=localStorage.getItem("UserEmail");
-     this.UserPassword=localStorage.getItem("UserPassword") ;
+     localStorage.setItem("FlightId",flightid);
+     localStorage.setItem("Bseat",Bseat);
+     localStorage.setItem("Eseat",Eseat);
     //console.log("UserId",UserId,UserEmail,UserPassword);
 
-    let Seat={
-      "bookedEconomySeats":Eseat,
-      "bookedBussinessSeats":Bseat
-    }
-    this.userService.BookFlight(this.UserEmail,this.UserPassword,this.UserId,flightid,Seat).subscribe(data=>{
-      console.log(data);
-    })
+    
 
+    this.router.navigate(['/bookingDetails']);
   }
   ngOnInit(): void {
   }

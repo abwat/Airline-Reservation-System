@@ -1,13 +1,13 @@
 <div class="shadow-lg p-3 mb-5 bg-white rounded container">
     <div class="row">
-        <div class="col-lg-6" >
-            Flight details:<br>
+        <div class="col-lg-6 " >
+            <span class="font-weight-bold">Flight details:</span><br>
             <div class="row d-flex p-2 bd-highlight shadow-lg rounded ">
                 <div class="col-lg-6">
                     <b>Flight id :</b> 
                 </div>
                 <div class="col-lg-6">
-                        1
+                        {{flight.flightid}}
                 </div>
             </div>
             
@@ -16,7 +16,7 @@
                     <b>Flight name :</b> 
                 </div>
                 <div class="col-lg-6">
-                        AirIndia
+                        {{flight.flightname}}
                 </div>
             </div>
 
@@ -25,7 +25,7 @@
                     <b>Source :</b> 
                 </div>
                 <div class="col-lg-6">
-                        Delhi
+                        {{flight.source}}
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                     <b>Destination :</b> 
                 </div>
                 <div class="col-lg-6">
-                        Pune
+                        {{flight.destination}}
                 </div>
             </div>
 
@@ -43,7 +43,7 @@
                     <b>Economy Seats :</b> 
                 </div>
                 <div class="col-lg-6">
-                        1
+                        {{Eseat}}
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
                     <b>Business Seats :</b> 
                 </div>
                 <div class="col-lg-6">
-                        1
+                        {{Bseat}}
                 </div>
             </div>
             <div class="row d-flex p-2 bd-highlight shadow-lg rounded">
@@ -60,7 +60,7 @@
                     <b>Date :</b> 
                 </div>
                 <div class="col-lg-6">
-                        29-12-21
+                        {{flight.date}}
                 </div>
             </div>
             <div class="row d-flex p-2 bd-highlight shadow-lg rounded">
@@ -68,19 +68,27 @@
                     <b>Time :</b> 
                 </div>
                 <div class="col-lg-6">
-                        10:00:00
+                        {{flight.time}}
+                </div>
+            </div>
+            <div class="row d-flex p-2 bd-highlight shadow-lg rounded">
+                <div class="col-lg-6">
+                    <b>Price :</b> 
+                </div>
+                <div class="col-lg-6">
+                        {{price}}
                 </div>
             </div>
         </div>
 
         <div class="col-lg-6" >
-            Passenger details:<br>
+           <span class="font-weight-bold">Passenger details:</span> <br>
             <div class="row d-flex p-2 bd-highlight shadow-lg rounded">
                 <div class="col-lg-6">
                     <b>Passenger id :</b> 
                 </div>
                 <div class="col-lg-6">
-                        1
+                        {{user.userId}}
                 </div>
             </div>
             
@@ -89,7 +97,7 @@
                     <b>Name :</b> 
                 </div>
                 <div class="col-lg-6">
-                        Aniket
+                        {{user.name}}
                 </div>
             </div>
 
@@ -98,7 +106,7 @@
                     <b>EmailId</b> 
                 </div>
                 <div class="col-lg-6">
-                        aniket@gmail
+                        {{user.emailId}}
                 </div>
             </div>
 
@@ -107,7 +115,7 @@
                     <b>Age :</b> 
                 </div>
                 <div class="col-lg-6">
-                        21
+                        {{user.age}}
                 </div>
             </div>
 
@@ -116,7 +124,7 @@
                     <b>Gender :</b> 
                 </div>
                 <div class="col-lg-6">
-                        Male
+                        {{user.gender}}
                 </div>
             </div>
 
@@ -125,16 +133,13 @@
                     <b>Contact No. :</b> 
                 </div>
                 <div class="col-lg-6">
-                        98842373
+                        {{user.phonenumber}}
                 </div>
             </div>
             
         </div>
 
     </div>
-    
-
-
-
-
+    <button class="btn btn-primary" style="margin-left: 46%; margin-top: 10px;" (click)="ConfirmBooking()">Confirm</button>
 </div>
+

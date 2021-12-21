@@ -35,4 +35,31 @@ export class UserService {
     }
   )
   }
+  GetUserById(id:any)
+  {
+    let name=localStorage.getItem("UserEmail");
+    let password=localStorage.getItem("UserPassword");
+    return this.http.get(this.url +"user/getuser/"+id,
+    {
+      headers:{
+        "content-type": "application/json",
+        authorization: "Basic "+ btoa(name+":"+password)
+      }
+    }
+  )
+  }
+
+  GetFlightById(id:any)
+  {
+    let name=localStorage.getItem("UserEmail");
+    let password=localStorage.getItem("UserPassword");
+    return this.http.get(this.url +"user/getflight/"+id,
+    {
+      headers:{
+        "content-type": "application/json",
+        authorization: "Basic "+ btoa(name+":"+password)
+      }
+    }
+  )
+  }
 }
