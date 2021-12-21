@@ -1,0 +1,147 @@
+<div id="booking">
+    <section id="search">
+      <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <h3 style="color: white;">Search a flight</h3>
+                <div class="Scard" >
+                    <h5 class="text-center mb-4">Powering world-class companies</h5>
+                    <form class="form-card" >
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-4 flex-column d-flex">
+                                <label for="source">Source</label>
+                                 <input #source type="text" name="source" id="source">
+                            </div>
+        
+                            <div class="form-group col-sm-4 flex-column d-flex"> 
+                                <label for="dest">Destinition</label>
+                                <input #dest type="text" name="dest" id="dest">
+                            </div>
+
+                            <div class="form-group col-sm-4 flex-column d-flex">
+                                <label for="date">Date</label>
+                                <input #date type="date" name="date" id="date">
+                            </div>
+                            <button  class="btn btn-primary" (click)="SearchFlight(source.value, dest.value,date.value)">
+                                Search flights
+                            </button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="card-container">
+   <hr>
+    <!-- <app-booking-card  *ngFor="let flight of SeachedFlights"
+        cityName="Explore  {{flight.destination}}" 
+        imageSource="https://static.toiimg.com/thumb/msid-24183773,width-1070,height-580,resizemode-75,imgsize-24183773,pt-32,y_pad-40/24183773.jpg"
+        source={{flight.source}}
+        sourceAb="NY"
+        dest={{flight.destination}}
+        destAb="BOM"
+        currency="INR"
+        price1={{flight.price}}
+        price2="1000"
+        price3="1500"
+    ></app-booking-card> -->
+
+    <!-- <table class="table table-dark table-striped table-hover h4" >
+        <thead>
+          <tr style="color: #cda45e; font-size: 18px;" >
+            <th scope="col">Flight Name</th>
+            <th scope="col">Source</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Price</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flight of SeachedFlights" style="font-size: 18px;" >
+            
+            <td style="color: rgb(187, 189, 184);">{{flight.flightname}}</td>
+            <td style="color: rgb(187, 189, 184);">{{flight.source}}</td>
+            <td style="color: rgb(187, 189, 184);">{{flight.destination}}</td>
+            <td style="color: rgb(187, 189, 184);">{{flight.price}}</td>
+            <td style="color: rgb(187, 189, 184);">{{flight.date}}</td>
+            <td style="color: rgb(187, 189, 184);">{{flight.time}}</td>
+          </tr>
+        </tbody>
+        </table> -->
+
+        <!-- <div class="card bg-c-blue order-card">
+            <div class="card-block">
+                <h6 class="m-b-20">flight.flightname</h6>
+                <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>486</span></h2>
+                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+            </div>
+        </div> -->
+
+        <div class="card card-big mb15" id="Fcard" *ngFor="let flight of SeachedFlights">
+            <div class="card__img-wrap">
+                
+                <img src="https://static.toiimg.com/thumb/msid-24183773,width-1070,height-580,resizemode-75,imgsize-24183773,pt-32,y_pad-40/24183773.jpg" style="width: 10px; height: 10px;">
+                <h4 class="title title-overlay-center">{{flight.destination}}</h4>
+            </div>
+            <div class="card__info">
+                <div class="title-left-wrap"> <h5>{{flight.source}}</h5> <small> ab1 </small></div>
+                <span class="icon-center-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16" style="transform: rotate(90deg);">
+                        <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
+                      </svg>
+                </span>
+                <div class="title-right-wrap"> <h5>{{flight.destination}}</h5> <small>  ab2 </small></div>
+            </div> <!--  card__info //  --> 
+            <div class="card__pricelist">
+                <div class="cost">
+                    <div class="logo-wrap">
+                        <p>{{flight.flightname}}</p>
+                    </div>
+                    <div class="icon-wrap"> 
+                        
+                        <span>DATE </span> <br>
+                        <small>{{flight.date}}</small> 
+                    </div>
+
+                    <div class="icon-wrap"> 
+                        <span>Time </span> <br>
+                        <small>{{flight.time}}</small> 
+                    </div>
+
+                    <div class="icon-wrap"> 
+                        <div class="price-wrap"><var class="price"><span class="currency">INR</span>  {{flight.price}}</var>
+                    </div>
+
+<!-- 
+                    <div class="icon-wrap"><var class="price"><span class="currency">INR</span>  {{flight.price}}</var>
+                        <a rel="nofollow" target="_blank" href="" class="small">Book</a></div>  -->
+                </div><!--  cost //  -->
+               
+            </div> <!-- card__pricelist // -->
+
+            <div class="row">
+                <div class="col-md-4" >
+                    <label for="Bseat" style="margin-left: 17px;">Buisness seat</label>
+                    <input #Bseat style="width: 60px; margin: 10px 10px 10px 10px;" id="BSeat" type="number" value="0" >
+                    
+                </div>
+                <div class="col-md-4" >
+                    <label for="Eseat" style="margin-left: 10px;">Economy seat</label>
+                    <input #Eseat style="width: 60px; margin: 10px;" id="Eseat" type="number" value="0" >
+                    
+                </div>
+                <div class="col-md-4" >
+                    
+                    <button href="" class="btn btn-danger" 
+                    style="margin-right:20px;margin-bottom: 5px; float: right;" (click)="BookFlight(flight.flightid,Bseat.value,Eseat.value)">Book</button>
+                </div>
+            </div>
+           
+            
+        </div> <!-- card // -->
+</div>
+
+</div>

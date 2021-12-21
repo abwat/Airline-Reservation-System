@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { LoginService } from '../service/login.service';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   password:string='';
   
   isError:boolean=true;
-  constructor(private loginserv: LoginService,private router : Router) { }
+  constructor(private service: UserService,private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -23,11 +24,15 @@ export class LoginComponent implements OnInit {
   {
      
       
-      this.loginserv.validateLogin(this.emailId,this.password).subscribe(data=>{
-        if(data==200)
+      this.service.validateLogin(this.emailId,this.password).subscribe((data:any)=>{
+        if(data>0)
         {
+          const id=data
+          localStorage.setItem("UserId",id);
+          localStorage.setItem("UserEmail",this.emailId);
+          localStorage.setItem("UserPassword",this.password);
           this.isError=true;
-          // this.router.navigate(['/TicketBook']);
+          this.router.navigate(['/booking']);
           console.log(data)
         }
       },

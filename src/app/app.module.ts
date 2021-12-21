@@ -15,6 +15,8 @@ import { ShowflightsComponent } from './showflights/showflights.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { BookingComponent } from './booking/booking.component';
+import { BookingCardComponent } from './booking-card/booking-card.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     UpdateDeleteFlightComponent,
     ShowflightsComponent,
     RegistrationComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    BookingComponent,
+    BookingCardComponent
   ],
   imports: [
     BrowserModule,
