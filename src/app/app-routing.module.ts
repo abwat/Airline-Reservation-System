@@ -11,6 +11,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { ShowflightsComponent } from './showflights/showflights.component';
 import { BookingComponent } from './booking/booking.component';
+import { BookingDetailsComponent } from './booking-details/booking-details.component';
 
 const routes: Routes = [
   
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path:"booking",
     component: BookingComponent
+  },
+  {
+    path: "bookingDetails",
+    component: BookingDetailsComponent
   }
 
 ];

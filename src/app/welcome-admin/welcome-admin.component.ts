@@ -2,6 +2,8 @@ import { AddflightComponent } from './../addflight/addflight.component';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../service/login.service';
+import { DatePipe } from '@angular/common';
+import { AdminServiceService } from '../service/admin-service.service';
 
 @Component({
   selector: 'app-welcome-admin',
@@ -12,7 +14,8 @@ export class WelcomeAdminComponent implements OnInit {
   SeachedFlights: any;
   isError: boolean=false;
 
-  constructor(private router: Router,private service :LoginService) { }
+  constructor(private router: Router,private service :LoginService,public datapipe:DatePipe,
+    private service1:AdminServiceService) { }
 
   ngOnInit(): void {
   }
@@ -23,15 +26,10 @@ export class WelcomeAdminComponent implements OnInit {
     this.addflight = true;
   }
 
-  onUpdateDelete()
-  {
-    this.router.navigate(["/update-delete-flight"]);
-  }
   displayflights = false;
   onpress(source: any,destination: any,date: any)
   {
-    
-    
+    // let date1=this.datapipe.transform(date,'dd-MM-yy');
     this.service.GetSearchedFlight(source,destination,date).subscribe((data:any)=>{
       this.SeachedFlights=data;
             
@@ -53,6 +51,24 @@ export class WelcomeAdminComponent implements OnInit {
 
 
   //console.log(source, destination, date);
+  
+    
+  }
+
+
+
+  updatestatus(id:any)
+  {
+
+  
+    
+  }
+
+  delete(id:number,source:any,destination:any,date:any)
+  {
+    this.service1.DeleteFlight(id).subscribe(data=>{
+      this.onpress(source,destination,date);
+    })
   
     
   }

@@ -17,6 +17,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BookingComponent } from './booking/booking.component';
 import { BookingCardComponent } from './booking-card/booking-card.component';
+import { BookingDetailsComponent } from './booking-details/booking-details.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { BookingCardComponent } from './booking-card/booking-card.component';
     RegistrationComponent,
     AdminLoginComponent,
     BookingComponent,
-    BookingCardComponent
+    BookingCardComponent,
+    BookingDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ import { BookingCardComponent } from './booking-card/booking-card.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

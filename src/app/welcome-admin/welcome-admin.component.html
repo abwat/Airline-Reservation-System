@@ -47,22 +47,35 @@
                     <table class="table table-dark table-striped table-hover h4" >
                     <thead>
                       <tr style="color: #cda45e; font-size: 18px;" >
+                        <th scope="col">Flight Id</th>
                         <th scope="col">Flight Name</th>
                         <th scope="col">Source</th>
                         <th scope="col">Destination</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Price</th>
                         <th scope="col">Date</th>
                         <th scope="col">Time</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let flight of SeachedFlights" style="font-size: 18px;" >
+                        
+                        <td style="color: rgb(187, 189, 184);">{{flight.flightid}}</td>
                         <td style="color: rgb(187, 189, 184);">{{flight.flightname}}</td>
                         <td style="color: rgb(187, 189, 184);">{{flight.source}}</td>
                         <td style="color: rgb(187, 189, 184);">{{flight.destination}}</td>
+                        <td style="color: rgb(187, 189, 184);">{{flight.status}}</td>
                         <td style="color: rgb(187, 189, 184);">{{flight.price}}</td>
                         <td style="color: rgb(187, 189, 184);">{{flight.date}}</td>
                         <td style="color: rgb(187, 189, 184);">{{flight.time}}</td>
+                        <td style="color: rgb(187, 189, 184);">
+                          <button type="submit" (click) = updatestatus(flight.flightid)>
+                            Update Status</button>
+                            <button type="submit" (click) = delete(flight.flightid,flight.source,flight.destination,flight.date)>
+                              Delete Flight</button>
+                            </td>
+
                       </tr>
                     </tbody>
                     </table>
@@ -75,6 +88,8 @@
                     <p style="color: peachpuff;">No Data Found</p>
                   </div>
               </div>
+
+              
               <div class="text-center py-5 pt-5 h4">
                 <button type="submit" (click) = onAdd()>Add Flight</button>
                 <div id="render show flights" *ngIf="addflight">

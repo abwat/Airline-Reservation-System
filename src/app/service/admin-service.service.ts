@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +9,13 @@ export class AdminServiceService {
 
   private url ="http://localhost:8090/";
 
+  private deleteurl="http://localhost:8090/admin/deleteflight";
+
   constructor(private http:HttpClient) { }
 
-  AddFlight(id:any,name:any,src:any,dest:any,status:any,date:any,price:any,eseat:any,bseat:any,time:any)
+  AddFlight(name:any,src:any,dest:any,status:any,date:any,price:any,eseat:any,bseat:any,time:any)
   {
     let flight={
-    flightid:NaN,
     flightname: "",
     source:"",
     destination: "",
@@ -25,7 +27,6 @@ export class AdminServiceService {
     time: ""
 
     };
-    flight.flightid=id,
     flight.flightname= name,
     flight.source=src,
     flight.destination= dest,
@@ -39,4 +40,9 @@ export class AdminServiceService {
     return this.http.post(this.url+"admin/addflights",flight,{headers:{"Content-Type": "application/json"}});
 
   }
+
+  DeleteFlight(id:number):Observable<Object>{
+    return this.http.delete(`${this.deleteurl}/${id}`);
+  }
+
 }
