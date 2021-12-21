@@ -11,8 +11,6 @@
    <h3> <p align = "center">Add Flight</p></h3>
     <div class = "bookingformbox">
         <div class="booking-form" >
-            <label>Flight ID</label>
-            <input type="number" class="form-control" style="color: #958c7c;"  placeholder="Flight ID" #id>
             <label>Flight Name</label>
             <input type="text" class="form-control" style="color: #958c7c;" placeholder="Flight Name" #name>
             <label>Source</label>
@@ -38,7 +36,7 @@
             </div>
             
             <div class="flights">
-                <button class="btn btn-primary" type="submit" (click)="Addflight(id.value,name.value,src.value,dest.value,status.value,date.value,price.value,eseat.value,bseat.value,time.value)">Add Flight</button>
+                <button class="btn btn-primary" type="submit" (click)="Addflight(name.value,src.value,dest.value,status.value,date.value,price.value,eseat.value,bseat.value,time.value)">Add Flight</button>
             </div>
         </div>
     </div>

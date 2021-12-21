@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../service/login.service';
 
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   SeachedFlights:any;
   isSearched:boolean=true;
   isError=false;
-  constructor(private service: LoginService) { }
+  constructor(private service: LoginService,public datapipe:DatePipe) { }
 
   ngOnInit(): void {
     this.service.getAllFlightDeatils().subscribe(data=>{
@@ -23,7 +24,9 @@ export class HomeComponent implements OnInit {
   }
   SeachFlight(source: any, destination: any, date: any)
   {
-    this.service.GetSearchedFlight(source,destination,date).subscribe((data:any)=>{
+    let date1=this.datapipe.transform(date,'dd-MM-yy');
+    console.log(date1);
+    this.service.GetSearchedFlight(source,destination,date1).subscribe((data:any)=>{
         this.SeachedFlights=data;
         if(data.length==0)
       {

@@ -14,10 +14,10 @@ export class AddflightComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  Addflight(id:any,name:any,src:any,dest:any,status:any,date:any,price:any,eseat:any,bseat:any,time:any)
+  Addflight(name:any,src:any,dest:any,status:any,date:any,price:any,eseat:any,bseat:any,time:any)
   {
-    console.log(id,name,dest,status,date,price,eseat,bseat);
-    this.service.AddFlight(id,name,src,dest,status,date,price,eseat,bseat,time).subscribe(data=>{
+    console.log(name,dest,status,date,price,eseat,bseat);
+    this.service.AddFlight(name,src,dest,status,date,price,eseat,bseat,time).subscribe(data=>{
       console.log("new Flight", data);
       alert("New Flight Added");
     })

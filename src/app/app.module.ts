@@ -15,6 +15,8 @@ import { ShowflightsComponent } from './showflights/showflights.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { BookingDetailsComponent } from './booking-details/booking-details.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     UpdateDeleteFlightComponent,
     ShowflightsComponent,
     RegistrationComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    BookingDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
