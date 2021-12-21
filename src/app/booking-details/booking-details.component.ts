@@ -11,5 +11,17 @@ export class BookingDetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  flight={
+    flightname: "",
+    source:"",
+    destination: "",
+    status: "",
+    availableEconomySeats:NaN,
+    availableBussinessSeats: NaN,
+    price:NaN,
+    date: "",
+    time: ""
+    };
+    
 
 }

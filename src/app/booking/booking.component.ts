@@ -25,7 +25,6 @@ export class BookingComponent implements OnInit {
       this.service.GetSearchedFlight(source,destination,date).subscribe((data:any)=>
         {
           console.log(data);
-          
           this.SeachedFlights= data; 
         });
       //this.both = true;
