@@ -68,31 +68,7 @@ public class Usercontroller{
 		b.setUser(u);
 		return bookingrepo.save(b);
 	}
-	
-//	@PostMapping("/{userid}/book/{flightid}")
-//	public BookingResponseModel book(@PathVariable Long userid,
-//			@PathVariable Long flightid,@RequestBody Booking b ){
-//		User u=userrepo.findByUserId(userid);
-//		Flight f=flightrepo.findByFlightid(flightid);
-//		int economy=b.getBookedEconomySeats();
-//		int business=b.getBookedBussinessSeats();
-//		f.setAvailableEconomySeats(f.getAvailableEconomySeats()-economy);
-//		f.setAvailableBussinessSeats(f.getAvailableBussinessSeats()-business);
-//		flightrepo.save(f);
-//		b.setFlight(f);
-//		b.setUser(u);
-//		bookingrepo.save(b);
-//		
-//		br.setBookingId(b.getBookingId());
-//		br.setFlightid(flightid);
-//		br.setFlightname(f.getFlightname());
-//		br.setBookedBussinessSeats(business);
-//		br.setBookedEconomySeats(economy);
-//		br.setSource(f.getSource());
-//		br.setDestination(f.getDestination());
-//		br.setUsername(u.getName());
-//		return br;
-//	}
+
 	
 //	show all my active booking
 	@GetMapping("/bookings/{userid}")

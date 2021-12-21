@@ -24,9 +24,8 @@ export class HomeComponent implements OnInit {
   }
   SeachFlight(source: any, destination: any, date: any)
   {
-    let date1=this.datapipe.transform(date,'dd-MM-yy');
-    console.log(date1);
-    this.service.GetSearchedFlight(source,destination,date1).subscribe((data:any)=>{
+    
+    this.service.GetSearchedFlight(source,destination,date).subscribe((data:any)=>{
         this.SeachedFlights=data;
         if(data.length==0)
       {
