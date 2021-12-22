@@ -19,27 +19,12 @@ export class HeaderComponent implements OnInit{
   constructor(private router:Router){}
   
   ngOnInit(){
-      this.user=false;
-      this.admin=false;
-      if(sessionStorage.getItem('role')==='user'){
-          this.user=true;
-      }else if(sessionStorage.getItem('role')==='admin'){
-          this.admin=true;
-      }
-       
-      this.username=sessionStorage.getItem('username');
-      if(this.username!=null)
-          this.username=this.username.toUpperCase();
-        
+          
   }
-  isloggedin()
+  Logout()
   {
-    return this.loggedin;
-  }
-
-  loginPage()
-  {
-    this.router.navigate(["/login"]);
+    localStorage.clear();
+    this.router.navigate(['/'])
   }
 
 }
