@@ -1,0 +1,93 @@
+<section id="viewBooking">
+
+    <div class="container-fluid my-5 d-flex justify-content-center">
+        <div class="card card-1">
+            <div class="card-header bg-white">
+                <div class="media flex-sm-row flex-column-reverse justify-content-between ">
+                    <div class="col my-auto">
+                        <h4 class="mb-0">Thanks for your Booking,<span class="change-color"> {{FlightDetails[0].user.name}}</span> !</h4>
+                    </div>
+                    <div class="col-auto text-center my-auto pl-0 pt-sm-4"> <img class="img-fluid my-auto align-items-center mb-0 pt-3 pb-3" src="../../assets/img/AirlineLogo.png" width="50" height="50">
+                        <p class="mb-4 pt-0 Glasses">We Fly Together</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row justify-content-between mb-3">
+                    <div class="col-auto">
+                        <h6 class="color-1 mb-0 change-color">Your Booking</h6>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-2" *ngFor="let details of FlightDetails" style="margin: 10px;">
+                            <div class="card-body">
+                                <div class="media">
+                                    <div class="sq align-self-center "> <img class="img-fluid my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0" src="../../assets/img/ViewBookingLogo.png" width="135" height="135" /> </div>
+                                    <div class="media-body my-auto text-right">
+                                        <div class="row my-auto flex-column flex-md-row">
+                                            <div class="col my-auto">
+                                                <b class="mb-0"> Flightname</b>
+                                                <br>
+                                                <h6 class="mb-0"> {{details.flight.flightname}}</h6>
+                                            </div>
+                                            <div class="col-auto my-auto"> <b>Source </b>
+                                                <br>
+                                                <h6 class="mb-0"> {{details.flight.source}}</h6>
+                                            </div>
+                                            <div class="col my-auto"> <b>Destination</b>
+                                                <br>
+                                                <h6 class="mb-0"> {{details.flight.destination}}</h6>
+                                            </div>
+                                            <div class="col my-auto" style="padding-top: 20px;"> <b>Date</b>
+                                                <br>
+                                                <h6 class="mb-0" style="width:99px;"> {{details.flight.date}} {{details.flight.time}}</h6>
+                                            </div>
+                                            <div class="col my-auto" style="padding-top: 20px;"> <b>Business Seat</b>
+                                                <br>
+                                                <h6 class="mb-0"> {{details.bookedBussinessSeats}}</h6>
+                                            </div>
+                                            <div class="col my-auto" style="padding-top: 20px;">
+                                                <b class="mb-0" >Economy Seat</b>
+                                                <br>
+                                                <h6 class="mb-0"> {{details.bookedEconomySeats}}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-3 ">
+    
+                                
+                            </div>
+                            
+                        </div>
+                        <br>
+                            <br>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="card-footer">
+                <div class="jumbotron-fluid">
+                    <div class="row justify-content-center ">
+                        <div class="col-sm-auto col-auto my-auto pb-2"><img class="img-fluid my-auto align-self-center  "  src="../../assets/img/AirlineLogo_White.png" width="50" height="50"></div>
+                        <div class="col-auto my-auto ">
+                            <h2 class="mb-0 font-weight-bold" style="color: azure;">Aerotor</h2>
+                        </div>
+                        <!-- <div class="col-auto my-auto ml-auto">
+                            <h1 class="">&#8377; 5,528</h1>
+                        </div> -->
+                    </div>
+                    <div class="row mb-3 mt-3 mt-md-0 justify-content-center">
+                        <div class="col-auto border-line"> <b class="text-white">+1 5589 55488 55</b></div>
+                        <div class="col-auto border-line"> <b class="text-white">info@aerotor.com</b></div>
+                        <div class="col-auto "><b class="text-white">  Pune, Maharashtra 411004  </b> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

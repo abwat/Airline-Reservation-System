@@ -2,13 +2,13 @@ section{
     background-color: black;
 }
 
-input[type=date]:required:invalid::-webkit-datetime-edit {
+ input[type=date]:required:invalid::-webkit-datetime-edit {
     color: #958c7c;
 }
-input[type=date]:focus::-webkit-datetime-edit {
+ input[type=date]:focus::-webkit-datetime-edit {
     color: #958c7c !important;
 }
-::-webkit-calendar-picker-indicator {
+input[type=date]:required::-webkit-calendar-picker-indicator {
     /* filter: invert(1); */
     background-color: #958c7c
 }

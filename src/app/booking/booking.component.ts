@@ -44,7 +44,9 @@ export class BookingComponent implements OnInit {
   }
 
   YourBooking()
-  {}
+  {
+    this.router.navigate(['/ViewBooking'])
+  }
 
   Logout()
   {
