@@ -23,14 +23,14 @@
             <p>Search a Flight</p>
           </div>
   
-          <form role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100" >
+          <form role="form"  class="php-email-form" data-aos="fade-up" data-aos-delay="100" >
             <div class="row">
               <div class="col-lg-4 col-md-6 form-group">
-                <input type="text" name="source" class="form-control" id="source" placeholder="Source Station" #source>
+                <input type="text" name="source" class="form-control" id="source" placeholder="Source Station" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #source>
                 <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination Station" #destination>
+                <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination Station" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #destination>
                 <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0" >
@@ -107,5 +107,5 @@
 
         
         
-      </section><!-- End Book A Table Section -->
+     
   
