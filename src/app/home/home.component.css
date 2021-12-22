@@ -52,11 +52,20 @@
 }
 #date
 {
+  color: #ffffff;
+}
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
   color: #958c7c;
 }
-::-webkit-calendar-picker-indicator {
-  /* filter: invert(1); */
-  background-color: #958c7c}
+input[type=date]:focus::-webkit-datetime-edit {
+  color: #ffffff !important;
+}
+
+input[type=date]:required::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  /* background-color: #958c7c */
+}
 
   h4{
     color: white;

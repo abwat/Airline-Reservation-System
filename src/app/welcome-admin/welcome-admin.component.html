@@ -1,6 +1,21 @@
+
+ <!-- ======= Header ======= -->
+ <!-- <header id="header">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+      <img src="../../assets/img/AirlineLogo_White.png" style="height: 70px; width: 70px">
+      <h1 class="logo me-auto me-lg-0"> <a href="">AEROTOR</a></h1>
+      Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      
+      
+      <!-- <a href="/adminLogin" class="book-a-table-btn scrollto d-none d-lg-flex" style="margin-left: 0px;">Logout</a>
+    </div>
+  </header>End Header -->
 <app-header></app-header>
 
-      <!-- ======= Book A Table Section ======= -->
+
+      <!-- ======= Searech A Flight Section ======= -->
       <section id="book-a-table" class="book-a-table">
         <div class="container" data-aos="fade-up">
           
@@ -13,15 +28,61 @@
           <form role="form"  class="php-email-form" data-aos="fade-up" data-aos-delay="100" >
             <div class="row">
               <div class="col-lg-4 col-md-6 form-group">
-                <input type="text" name="source" class="form-control" id="source" placeholder="Source Station" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #source>
+                <!-- <input type="text" name="source" class="form-control" id="source" placeholder="Source Station" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #source> -->
+                
+                <input type="text" list="source" class="form-control" placeholder="Source"  #source>
+                <datalist id="source">
+                     <option style="color: #0a0907;" value="Mumbai">Mumbai</option>
+                     <option style="color: #0a0907;" value="Delhi">Delhi</option>
+                     <option style="color: #0a0907;" value="Bangalore">Bangalore</option>
+                     <option style="color: #0a0907;" value="Hyderabad">Hyderabad</option>
+                     <option style="color: #0a0907;" value="Ahmedabad">Ahmedabad</option>
+                     <option style="color: #0a0907;" value="Chennai">Chennai</option>
+                     <option style="color: #0a0907;" value="Pune">Pune</option>
+                     <option style="color: #0a0907;" value="Jaipur">Jaipur</option>
+                     <option style="color: #0a0907;" value="Kolkata">Kolkata</option> 
+                     <option style="color: #0a0907;" value="Lucknow">Lucknow</option>
+                     <option style="color: #0a0907;" value="Kanpur">Kanpur</option>
+                     <option style="color: #0a0907;" value="Nagpur">Nagpur</option>
+                     <option style="color: #0a0907;" value="Indore">Indore</option>
+                     <option style="color: #0a0907;" value="Thane">Thane</option>
+                     <option style="color: #0a0907;" value="Bhopal">Bhopal</option>
+                     <option style="color: #0a0907;" value="Visakhapatnam">Visakhapatnam</option>
+                     <option style="color: #0a0907;" value="Patna">Patna</option>
+                </datalist>
+
+
                 <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination Station" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #destination>
+                <!-- <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination Station" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #destination> -->
+                
+                <input type="text" list="destination" class="form-control" placeholder="Destination" style="color: #ffffff;" #destination>
+                <datalist id="destination">
+                     <option style="color: #0a0907;" value="Mumbai">Mumbai</option>
+                     <option style="color: #0a0907;" value="Delhi">Delhi</option>
+                     <option style="color: #0a0907;" value="Bangalore">Bangalore</option>
+                     <option style="color: #0a0907;" value="Hyderabad">Hyderabad</option>
+                     <option style="color: #0a0907;" value="Ahmedabad">Ahmedabad</option>
+                     <option style="color: #0a0907;" value="Chennai">Chennai</option>
+                     <option style="color: #0a0907;" value="Pune">Pune</option>
+                     <option style="color: #0a0907;" value="Jaipur">Jaipur</option>
+                     <option style="color: #0a0907;" value="Kolkata">Kolkata</option> 
+                     <option style="color: #0a0907;" value="Lucknow">Lucknow</option>
+                     <option style="color: #0a0907;" value="Kanpur">Kanpur</option>
+                     <option style="color: #0a0907;" value="Nagpur">Nagpur</option>
+                     <option style="color: #0a0907;" value="Indore">Indore</option>
+                     <option style="color: #0a0907;" value="Thane">Thane</option>
+                     <option style="color: #0a0907;" value="Bhopal">Bhopal</option>
+                     <option style="color: #0a0907;" value="Visakhapatnam">Visakhapatnam</option>
+                     <option style="color: #0a0907;" value="Patna">Patna</option>
+                </datalist>
+                
                 <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0" >
-                <input placeholder="Select Date" type="date" class="form-control" id="fDate" name="date" required #date>
+                <input placeholder="Select Date" type="date" class="form-control" id="fDate" name="date"              
+                required #date>
                 <div class="validate"></div>
               </div>
               
@@ -57,9 +118,27 @@
                         <td style="color: rgb(187, 189, 184);">{{flight.date}}</td>
                         <td style="color: rgb(187, 189, 184);">{{flight.time}}</td>
                         <td style="color: rgb(187, 189, 184);">
-                          <button type="submit" (click) = updatestatus(flight.flightid)>
+                          <form >
+                            <input type="text" list="drop" class="form-control" placeholder="Update Status" style="color: #958c7c;" #s>
+                          <datalist id="drop">
+                            <option style="color: #0a0907;" value="OnLane">OnLane</option>
+                            <option style="color: #0a0907;" value="In Air">In Air</option>
+                            <option style="color: #0a0907;" value="Scheduled">Scheduled</option>
+                            <option style="color: #0a0907;" value="Landed">Landed</option>
+                          </datalist>
+                          </form>
+                          
+                          
+                          <!-- <select class="form-control" style="color: #958c7c;" value={{flight.status}} #s>{{flight.status}}
+                            <option style="color: #0a0907;" value="OnLane">OnLane</option>
+                            <option style="color: #0a0907;" value="In Air">In Air</option>
+                            <option style="color: #0a0907;" value="Scheduled">Scheduled</option>
+                            <option style="color: #0a0907;" value="Landed">Landed</option>
+                          </select> -->
+
+                          <button type="submit"  (click) = updateStatus(flight.flightid,s.value,flight.source,flight.destination,flight.date)>
                             Update Status</button>
-                            <button type="submit" (click) = delete(flight.flightid,flight.source,flight.destination,flight.date)>
+                          <button type="submit" (click) = delete(flight.flightid,flight.source,flight.destination,flight.date)>
                               Delete Flight</button>
                             </td>
 

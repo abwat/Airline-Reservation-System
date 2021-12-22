@@ -19,6 +19,7 @@ import { BookingComponent } from './booking/booking.component';
 import { BookingCardComponent } from './booking-card/booking-card.component';
 import { BookingDetailsComponent } from './booking-details/booking-details.component';
 import { DatePipe } from '@angular/common';
+import { ViewBookingComponent } from './view-booking/view-booking.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { DatePipe } from '@angular/common';
     AdminLoginComponent,
     BookingComponent,
     BookingCardComponent,
-    BookingDetailsComponent
+    BookingDetailsComponent,
+    ViewBookingComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { ShowflightsComponent } from './showflights/showflights.component';
 import { BookingComponent } from './booking/booking.component';
 import { BookingDetailsComponent } from './booking-details/booking-details.component';
+import { ViewBookingComponent } from './view-booking/view-booking.component';
 
 const routes: Routes = [
   
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: "bookingDetails",
     component: BookingDetailsComponent
+  },
+  {
+    path: "ViewBooking",
+    component: ViewBookingComponent
   }
 
 ];
