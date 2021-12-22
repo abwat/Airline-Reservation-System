@@ -53,6 +53,8 @@ export class UserService {
   {
     let name=localStorage.getItem("UserEmail");
     let password=localStorage.getItem("UserPassword");
+    
+    
     return this.http.get(this.url +"user/getflight/"+id,
     {
       headers:{
@@ -61,5 +63,21 @@ export class UserService {
       }
     }
   )
+  }
+
+  GetBookingById(id:any)
+  {
+    let name=localStorage.getItem("UserEmail");
+    let password=localStorage.getItem("UserPassword");
+    console.log("lllllllllll",name,password);
+    
+    return this.http.get(this.url+"user/bookings/"+id,
+    {
+      headers:{
+        "content-type": "application/json",
+        authorization: "Basic "+ btoa(name+":"+password)
+      }
+    }    
+    )
   }
 }
