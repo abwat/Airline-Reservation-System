@@ -12,7 +12,7 @@ import { WelcomeAdminComponent } from './welcome-admin/welcome-admin.component';
 import { AddflightComponent } from './addflight/addflight.component';
 import { UpdateDeleteFlightComponent } from './update-delete-flight/update-delete-flight.component';
 import { ShowflightsComponent } from './showflights/showflights.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BookingComponent } from './booking/booking.component';
@@ -46,7 +46,7 @@ import { ViewBookingComponent } from './view-booking/view-booking.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
