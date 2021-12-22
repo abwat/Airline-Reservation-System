@@ -1,6 +1,10 @@
 #booking{
-    background-color: rgb(9, 12, 4);
+    /* background-color: rgb(41, 41, 33); */
     /* height: 800px; */
+    background-color: #0cbaba;
+background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+
+
 }
 /* Card css start */
 .card-container, .card-container form{
@@ -172,7 +176,8 @@
     color: #000;
     overflow-x: hidden;
     height: 100%;
-    background-color: rgb(32, 30, 32);
+    /* background-color: rgb(32, 30, 32); */
+    background-image: url(../../assets/img/BookingPageUser.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%
     
@@ -237,3 +242,15 @@ button:focus {
     outline-width: 0
 }
 /* Search css Ends */
+
+.btn-info {
+    /* color: #fff; */
+    /* background-color: #5bc0de; */
+    /* border-color: #46b8da; */
+    background: #cda45e;
+    border: 0;
+    padding: 7px 12px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+  }

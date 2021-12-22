@@ -43,5 +43,13 @@ export class BookingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  YourBooking()
+  {}
+
+  Logout()
+  {
+    localStorage.clear();
+    this.router.navigate(['/'])
+  }
 
 }
