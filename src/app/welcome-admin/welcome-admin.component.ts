@@ -13,15 +13,15 @@ import { AdminServiceService } from '../service/admin-service.service';
 export class WelcomeAdminComponent implements OnInit {
   SeachedFlights: any;
   isError: boolean=false;
-
-  // showUpdate:boolean=true;
-
+  
   constructor(private router: Router,private service :LoginService,public datapipe:DatePipe,
     private service1:AdminServiceService) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+      
+    }
 
+    
   addflight = false;
   onAdd()
   {
