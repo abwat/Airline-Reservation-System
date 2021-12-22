@@ -14,9 +14,55 @@
             <label>Flight Name</label>
             <input type="text" class="form-control" style="color: #958c7c;" placeholder="Flight Name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"  required #name>
             <label>Source</label>
-            <input type="text" class="form-control" style="color: #958c7c;" placeholder="Source" required onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #src>
+            <!-- <input type="text" class="form-control" style="color: #958c7c;" placeholder="Source" required onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #src> -->
+            
+            <input type="text" list="source" class="form-control" placeholder="Destination" style="color: #958c7c;" #src>
+                <datalist id="source">
+                     <option style="color: #0a0907;" value="Mumbai">Mumbai</option>
+                     <option style="color: #0a0907;" value="Delhi">Delhi</option>
+                     <option style="color: #0a0907;" value="Bangalore">Bangalore</option>
+                     <option style="color: #0a0907;" value="Hyderabad">Hyderabad</option>
+                     <option style="color: #0a0907;" value="Ahmedabad">Ahmedabad</option>
+                     <option style="color: #0a0907;" value="Chennai">Chennai</option>
+                     <option style="color: #0a0907;" value="Pune">Pune</option>
+                     <option style="color: #0a0907;" value="Jaipur">Jaipur</option>
+
+                     <option style="color: #0a0907;" value="Lucknow">Lucknow</option>
+                     <option style="color: #0a0907;" value="Kanpur">Kanpur</option>
+                     <option style="color: #0a0907;" value="Nagpur">Nagpur</option>
+                     <option style="color: #0a0907;" value="Indore">Indore</option>
+                     <option style="color: #0a0907;" value="Thane">Thane</option>
+                     <option style="color: #0a0907;" value="Bhopal">Bhopal</option>
+                     <option style="color: #0a0907;" value="Visakhapatnam">Visakhapatnam</option>
+                     <option style="color: #0a0907;" value="Patna">Patna</option>
+                </datalist>
+                
+
             <label>Destination</label>
-            <input type="text" class="form-control" style="color: #958c7c;" placeholder="Destination" required onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #dest>
+            <!-- <input type="text" class="form-control" style="color: #958c7c;" placeholder="Destination" required onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #dest> -->
+            
+            <input type="text" list="destination" class="form-control" placeholder="Destination" style="color: #958c7c;" #dest>
+                <datalist id="destination">
+                     <option style="color: #0a0907;" value="Mumbai">Mumbai</option>
+                     <option style="color: #0a0907;" value="Delhi">Delhi</option>
+                     <option style="color: #0a0907;" value="Bangalore">Bangalore</option>
+                     <option style="color: #0a0907;" value="Hyderabad">Hyderabad</option>
+                     <option style="color: #0a0907;" value="Ahmedabad">Ahmedabad</option>
+                     <option style="color: #0a0907;" value="Chennai">Chennai</option>
+                     <option style="color: #0a0907;" value="Pune">Pune</option>
+                     <option style="color: #0a0907;" value="Jaipur">Jaipur</option>
+
+                     <option style="color: #0a0907;" value="Lucknow">Lucknow</option>
+                     <option style="color: #0a0907;" value="Kanpur">Kanpur</option>
+                     <option style="color: #0a0907;" value="Nagpur">Nagpur</option>
+                     <option style="color: #0a0907;" value="Indore">Indore</option>
+                     <option style="color: #0a0907;" value="Thane">Thane</option>
+                     <option style="color: #0a0907;" value="Bhopal">Bhopal</option>
+                     <option style="color: #0a0907;" value="Visakhapatnam">Visakhapatnam</option>
+                     <option style="color: #0a0907;" value="Patna">Patna</option>
+                </datalist>
+                
+
             <label>Status</label>
             <input type="text" class="form-control" style="color: #958c7c;" placeholder="Status" required #status>
             <label>Date</label>
