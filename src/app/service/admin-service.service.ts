@@ -11,6 +11,8 @@ export class AdminServiceService {
 
   private deleteurl="http://localhost:8090/admin/deleteflight";
 
+  private updateurl="http://localhost:8090/admin/updateflight";
+
   constructor(private http:HttpClient) { }
 
   AddFlight(name:any,src:any,dest:any,status:any,date:any,price:any,eseat:any,bseat:any,time:any)
@@ -45,4 +47,8 @@ export class AdminServiceService {
     return this.http.delete(`${this.deleteurl}/${id}`);
   }
 
+
+  UpdateFlightStatus(id:number,status:any):Observable<Object>{
+    return this.http.get(`${this.updateurl}/${id}/${status}`);
+  }
 }

@@ -14,11 +14,9 @@ public class Booking {
 	private long bookingId;
 	
 	@ManyToOne
-//	@JoinColumn(name="flightId")
 	private Flight flight;
 	
 	@ManyToOne
-//	@JoinColumn(name="userId")
 	private User user;
 	
 	private int bookedEconomySeats;

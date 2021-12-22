@@ -109,14 +109,14 @@ public class Admincontroller {
 	
 	
 //	update flight status
-	@PutMapping("/updateflight/{flightid}")
-	public ResponseEntity<Flight> updateflightStatus(@PathVariable Long flightid,@RequestBody Flight flight){
+	@GetMapping("/updateflight/{flightid}/{status}")
+	public ResponseEntity<Flight> updateflightStatus(@PathVariable Long flightid,@PathVariable String status){
 		
 		Flight f=flightrepo.findByFlightid(flightid);
 		if (f==null) {
 			throw new ResourceNotFoundException("not found");
 		}
-		f.setStatus(flight.getStatus());
+		f.setStatus(status);
 		flightrepo.save(f);
 		return ResponseEntity.ok(f);
 	}

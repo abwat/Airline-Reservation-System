@@ -14,6 +14,8 @@ export class WelcomeAdminComponent implements OnInit {
   SeachedFlights: any;
   isError: boolean=false;
 
+  // showUpdate:boolean=true;
+
   constructor(private router: Router,private service :LoginService,public datapipe:DatePipe,
     private service1:AdminServiceService) { }
 
@@ -57,19 +59,22 @@ export class WelcomeAdminComponent implements OnInit {
 
 
 
-  updatestatus(id:any)
+  updateStatus(id:number,status:any,source:any,destination:any,date:any)
   {
-
+    this.service1.UpdateFlightStatus(id,status).subscribe(data=>{
+      alert("Status of Flight with FlightId "+id+" has been updated to "+status);
+      this.onpress(source,destination,date);
+    })
   
     
   }
+
 
   delete(id:number,source:any,destination:any,date:any)
   {
     this.service1.DeleteFlight(id).subscribe(data=>{
       this.onpress(source,destination,date);
     })
-  
-    
   }
+
 }

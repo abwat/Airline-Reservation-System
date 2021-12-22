@@ -9,7 +9,6 @@
       
       
       <a href="/adminLogin" class="book-a-table-btn scrollto d-none d-lg-flex" style="margin-left: 0px;">Logout</a>
-
     </div>
   </header><!-- End Header -->
 
@@ -70,9 +69,27 @@
                         <td style="color: rgb(187, 189, 184);">{{flight.date}}</td>
                         <td style="color: rgb(187, 189, 184);">{{flight.time}}</td>
                         <td style="color: rgb(187, 189, 184);">
-                          <button type="submit" (click) = updatestatus(flight.flightid)>
+                          <form>
+                            <input type="text" list="drop" class="form-control" placeholder="Update Status" style="color: #958c7c;" #s>
+                          <datalist id="drop">
+                            <option style="color: #0a0907;" value="OnLane">OnLane</option>
+                            <option style="color: #0a0907;" value="In Air">In Air</option>
+                            <option style="color: #0a0907;" value="Scheduled">Scheduled</option>
+                            <option style="color: #0a0907;" value="Landed">Landed</option>
+                          </datalist>
+                          </form>
+                          
+                          
+                          <!-- <select class="form-control" style="color: #958c7c;" value={{flight.status}} #s>{{flight.status}}
+                            <option style="color: #0a0907;" value="OnLane">OnLane</option>
+                            <option style="color: #0a0907;" value="In Air">In Air</option>
+                            <option style="color: #0a0907;" value="Scheduled">Scheduled</option>
+                            <option style="color: #0a0907;" value="Landed">Landed</option>
+                          </select> -->
+
+                          <button type="submit"  (click) = updateStatus(flight.flightid,s.value,flight.source,flight.destination,flight.date)>
                             Update Status</button>
-                            <button type="submit" (click) = delete(flight.flightid,flight.source,flight.destination,flight.date)>
+                          <button type="submit" (click) = delete(flight.flightid,flight.source,flight.destination,flight.date)>
                               Delete Flight</button>
                             </td>
 
