@@ -8,6 +8,11 @@
     overflow: hidden;
     background: #1a1814;
   }
+ 
+  a:link {
+    text-decoration: none;
+  }
+
   nav ul{
     padding-top: 15px;
     display: flex;

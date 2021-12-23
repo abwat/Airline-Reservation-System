@@ -103,7 +103,7 @@
               </div>
               
               <div class="text-center py-5 pt-5 h4">
-                  <button type="submit" (click) = onpress(source.value,destination.value,date.value)>Search a Flight</button>
+                  <button class="btn btn-info" (click) = onpress(source.value,destination.value,date.value)>Search a Flight</button>
                   
                   <div id="render show flights" *ngIf="displayflights">
                       <br>
@@ -152,9 +152,9 @@
                             <option style="color: #0a0907;" value="Landed">Landed</option>
                           </select> -->
 
-                          <button type="submit"  (click) = updateStatus(flight.flightid,s.value,flight.source,flight.destination,flight.date)>
+                          <button class="btn btn-info"  (click) = updateStatus(flight.flightid,s.value,flight.source,flight.destination,flight.date)>
                             Update Status</button>
-                          <button type="submit" (click) = delete(flight.flightid,flight.source,flight.destination,flight.date)>
+                          <button class="btn btn-info" (click) = delete(flight.flightid,flight.source,flight.destination,flight.date)>
                               Delete Flight</button>
                             </td>
 
@@ -173,7 +173,7 @@
 
               
               <div class="text-center py-5 pt-5 h4">
-                <button type="submit" (click) = onAdd()>Add Flight</button>
+                <button class="btn btn-info" (click) = onAdd()>Add Flight</button>
                 <div id="render show flights" *ngIf="addflight">
                     <br>
                   <app-addflight></app-addflight>

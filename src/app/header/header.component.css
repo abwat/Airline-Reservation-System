@@ -4,10 +4,15 @@
     /* color: #fff; */
     /* background-color: #5bc0de; */
     /* border-color: #46b8da; */
-    background: #cda45e;
-    border: 0;
+    background: rgb(8, 5, 0);
+    border: 2px solid #cda45e;
     padding: 7px 12px;
     color: #fff;
     transition: 0.4s;
     border-radius: 50px;
+  }
+
+  .btn-info:hover{
+
+    background: #cda45e
   }
