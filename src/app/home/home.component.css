@@ -50,10 +50,7 @@
 #main{
   background: #020202;
 }
-#date
-{
-  color: #ffffff;
-}
+
 
 input[type=date]:required:invalid::-webkit-datetime-edit {
   color: #958c7c;
@@ -108,3 +105,5 @@ input[type=date]:required::-webkit-calendar-picker-indicator {
   transition: 0.4s;
   border-radius: 50px;
 }
+
+
