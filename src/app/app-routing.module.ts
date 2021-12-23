@@ -13,25 +13,21 @@ import { ShowflightsComponent } from './showflights/showflights.component';
 import { BookingComponent } from './booking/booking.component';
 import { BookingDetailsComponent } from './booking-details/booking-details.component';
 import { ViewBookingComponent } from './view-booking/view-booking.component';
+import { AuthGuard } from 'src/auth.guard';
+import { AdminAuthGuard } from 'src/admin-auth.guard';
 
 const routes: Routes = [
-  
-  {
-    path:"update-delete-flight",component:UpdateDeleteFlightComponent
-  },
-  {
-    path: "showflight",
-    component: ShowflightsComponent
-  },
   {
     path: "login",
     component: LoginComponent,
   },
   {
-    path:"addflight",component:AddflightComponent
+    path:"addflight",component:AddflightComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path:"welcome-admin",component:WelcomeAdminComponent
+    path:"welcome-admin",component:WelcomeAdminComponent,
+    canActivate: [AdminAuthGuard]
   },
   {
     path:'',component:HomeComponent
@@ -46,15 +42,18 @@ const routes: Routes = [
   },
   {
     path:"booking",
-    component: BookingComponent
+    component: BookingComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "bookingDetails",
-    component: BookingDetailsComponent
+    component: BookingDetailsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "ViewBooking",
-    component: ViewBookingComponent
+    component: ViewBookingComponent,
+    canActivate: [AuthGuard]
   }
 
 ];

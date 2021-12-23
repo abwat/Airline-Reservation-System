@@ -24,6 +24,7 @@ export class AdminLoginComponent implements OnInit {
     this.loginservice.adminValidation(this.admin).subscribe(data=>{
     if(data==200)
     {
+      localStorage.setItem("AdminLogin","200");
       this.isError=true;
       //console.log(data);
       this.route.navigate(['/welcome-admin']);
