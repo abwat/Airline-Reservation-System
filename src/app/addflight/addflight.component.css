@@ -59,6 +59,6 @@ p,label{
 
 
 ::-webkit-calendar-picker-indicator {
-    /* filter: invert(1); */
-    background-color: #958c7c
+    filter: invert(70%);
+    /* background-color: #958c7c */
 }

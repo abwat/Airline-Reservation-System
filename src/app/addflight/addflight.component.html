@@ -8,7 +8,7 @@
 </head>
 <body>
     <br>
-   <h3> <p align = "center">Add Flight</p></h3>
+   <h3> <p style="align-items: center;">Add Flight</p></h3>
     <div class = "bookingformbox">
         <div class="booking-form" >
             <label>Flight Name</label>
@@ -105,7 +105,15 @@
                 
 
             <label>Status</label>
-            <input type="text" class="form-control" style="color: #958c7c;" placeholder="Status" required #status>
+            <!-- <input type="" id="status" class="form-control" style="color: #958c7c;" placeholder="Status" required #status> -->
+            <input type="text" list="status" class="form-control" placeholder="Status" style="color: #958c7c;" #status>
+            <datalist id="status">
+                <option style="color: #0a0907;" value="OnLane">OnLane</option>
+                <option style="color: #0a0907;" value="In Air">In Air</option>
+                <option style="color: #0a0907;" value="Scheduled">Scheduled</option>
+                <option style="color: #0a0907;" value="Landed">Landed</option>
+              </datalist>
+            
             <label>Date</label>
             <input type="date" class="form-control" style="color: #958c7c;" placeholder="Date" required #date>
             <label>Time</label>
