@@ -10,7 +10,7 @@ export class LoginService {
 
    validateLogin(name:string,password:string)
   {
-  
+ 
   return this.http.get(this.url +"user/home",{
     headers:{
       "content-type": "application/json",
