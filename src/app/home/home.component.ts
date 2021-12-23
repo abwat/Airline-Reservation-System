@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   constructor(private service: LoginService,public datapipe:DatePipe) { }
 
   ngOnInit(): void {
+    localStorage.clear();
+
     this.service.getAllFlightDeatils().subscribe(data=>{
       this.Flights=data;
       console.log(data);      
