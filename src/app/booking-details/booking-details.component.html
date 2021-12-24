@@ -1,3 +1,11 @@
+<header id="topheader">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+      <img src="../../assets/img/AirlineLogo_White.png" style="height: 70px; width: 70px">
+      <h1 class="logo me-auto me-lg-0"> <a href="" style="text-decoration: none;">AEROTOR</a></h1>
+      <button class="btn btn-info" (click)="Logout()"  >Logout</button>
+      </div>
+  </header>
+
 <div class="shadow-lg p-3 mb-5 bg-white rounded container">
     <div class="row">
         <div class="col-lg-6 " >
@@ -71,11 +79,11 @@
                         {{flight.time}}
                 </div>
             </div>
-            <div class="row d-flex p-2 bd-highlight shadow-lg rounded">
+            <div class="row d-flex p-2 bd-highlight shadow-lg rounded" style="background-color: aquamarine;">
                 <div class="col-lg-6">
                     <b>Price :</b> 
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="font-weight: 700 ;">
                         {{price}}
                 </div>
             </div>

@@ -68,6 +68,9 @@ export class BookingDetailsComponent implements OnInit {
       this.route.navigate(['/booking']);
     })
   }
-  
+  Logout(){
+    localStorage.clear();
+    this.route.navigate(['/']);
+  }
 
 }
