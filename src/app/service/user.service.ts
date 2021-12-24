@@ -8,6 +8,27 @@ export class UserService {
 
   private url ="http://localhost:8090/";
   constructor(private http: HttpClient) { }
+
+
+deletebooking(id:any){
+
+  let name=localStorage.getItem("UserEmail");
+  let password=localStorage.getItem("UserPassword");
+  return this.http.delete(this.url +"user/deletebooking/"+id,
+  {
+    headers:{
+      "content-type": "application/json",
+      authorization: "Basic "+ btoa(name+":"+password)
+    }
+  }
+)
+
+}
+
+
+
+
+
   validateLogin(name:string,password:string)
   {
   

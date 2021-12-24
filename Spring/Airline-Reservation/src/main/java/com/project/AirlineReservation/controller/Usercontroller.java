@@ -44,9 +44,6 @@ public class Usercontroller{
 	private FlightRepo flightrepo;
 		
 	
-	
-	private BookingResponseModel br=new BookingResponseModel();
-	
 	@GetMapping("/home")
 	public long login() {
 		Authentication auth=SecurityContextHolder.getContext().getAuthentication();

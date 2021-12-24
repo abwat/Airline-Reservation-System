@@ -25,4 +25,14 @@ export class ViewBookingComponent implements OnInit {
       })
   }
 
+  cancel(bookingid:any){
+
+    console.log(bookingid)
+    this.sevice.deletebooking(bookingid).subscribe(response=>
+      {
+        alert("Your Booking with id "+bookingid+" has been canceled")
+        this.ngOnInit()
+      })
+
+  }
 }

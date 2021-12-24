@@ -43,6 +43,10 @@
                                                 <br>
                                                 <h6 class="mb-0"> {{details.flight.destination}}</h6>
                                             </div>
+                                            <div class="col my-auto" > <b>Status</b>
+                                                <br>
+                                                <h6 class="mb-0"> {{details.flight.status}}</h6>
+                                            </div>
                                             <div class="col my-auto" style="padding-top: 20px;"> <b>Date</b>
                                                 <br>
                                                 <h6 class="mb-0" style="width:99px;"> {{details.flight.date}} {{details.flight.time}}</h6>
@@ -60,12 +64,13 @@
                                     </div>
                                 </div>
                                 <hr class="my-3 ">
+
                                 <div class="d-flex justify-content-center">
 
-                                    <button class="btn btn-danger">Cancel Flight</button>
+                                    <button class="btn btn-danger" (click)=cancel(details.bookingId) type="submit">Cancel Flight</button>
 
                                 </div>
-                               
+                            
                             </div>
                             
                         </div>
