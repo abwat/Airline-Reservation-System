@@ -141,10 +141,12 @@
             </div>
         </div>
     </div>
-    
+    <div *ngIf="isError">
+        <p style="color: rgb(236, 234, 232); font-size: 30px; text-align: center;">No Data Found</p>
+      </div>
     </section>
     
-    <div class="card-container" >
+    <div class="card-container" *ngIf="!this.isError" >
   
    <hr>
     <!-- <app-booking-card  *ngFor="let flight of SeachedFlights"
@@ -264,6 +266,8 @@
     </div>
 
 </div>
+
+
 
 
 </div>

@@ -28,8 +28,24 @@ export class BookingComponent implements OnInit {
       console.log(source, destination, date);
       this.service.GetSearchedFlight(source,destination,date).subscribe((data:any)=>
         {
-          console.log(data);
-          this.SeachedFlights= data; 
+          if(data.length==0)
+      {
+       // console.log("null",data);
+        
+        this.isError=true; 
+        //this.isSearched=true;
+      }
+      else
+      {
+       // console.log("not null",data);
+       //this.isSearched=false
+       this.isError=false; 
+       this.SeachedFlights= data; 
+      }
+
+
+         // console.log(data);
+          
         });
       //this.both = true;
     }

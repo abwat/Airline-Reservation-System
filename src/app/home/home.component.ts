@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
        // console.log("null",data);
         
         this.isError=true; 
-        this.isSearched=true
+        this.isSearched=true;
       }
       else
       {
