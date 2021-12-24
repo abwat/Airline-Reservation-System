@@ -91,7 +91,7 @@
   
   
       <!-- ======= All Flight Section ======= -->
-      <section id="menu" class="menu section-bg">
+        <section id="menu" class="menu section-bg"> 
         <div class="container" data-aos="fade-up">
   
           <div class="section-title">
@@ -115,7 +115,7 @@
                </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let flight of Flights" >
+              <tr *ngFor="let flight of Flights | paginate: { itemsPerPage: 5, currentPage: p }" >
                 
                 <td style="color: rgb(187, 189, 184);">{{flight.flightname}}</td>
                 <td style="color: rgb(187, 189, 184);">{{flight.source}}</td>
@@ -126,11 +126,12 @@
               </tr>
             </tbody>
           </table>
-  
+          <pagination-controls (pageChange)="p = $event" class="my-pagination"></pagination-controls>
         </div>
-      </section><!-- End All Flight Section -->
+      </section>
+      <!-- End All Flight Section -->
   
-  
+      
       <!-- ======= Search a Flight Section ======= -->
       <section id="book-a-table" class="book-a-table">
         <div class="container" data-aos="fade-up">

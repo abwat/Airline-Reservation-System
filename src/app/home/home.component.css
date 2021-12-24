@@ -143,7 +143,13 @@ input[type=date]:required::-webkit-calendar-picker-indicator {
   transition: 0.4s;
   border-radius: 50px;
 }
-
+.my-pagination /deep/ .ngx-pagination {
+  color: white;
+  font-size: 15px;
+}
+.my-pagination /deep/ .ngx-pagination :hover {
+    background: rgb(83, 78, 78);
+}
 
 
 

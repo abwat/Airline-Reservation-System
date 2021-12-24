@@ -10,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  p=1;
   Flights:any;
   SeachedFlights:any;
   isSearched:boolean=true;

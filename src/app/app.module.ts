@@ -20,6 +20,8 @@ import { BookingCardComponent } from './booking-card/booking-card.component';
 import { BookingDetailsComponent } from './booking-details/booking-details.component';
 import { DatePipe } from '@angular/common';
 import { ViewBookingComponent } from './view-booking/view-booking.component';
+import { AllFlightsComponent } from './all-flights/all-flights.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -38,14 +40,16 @@ import { ViewBookingComponent } from './view-booking/view-booking.component';
     BookingComponent,
     BookingCardComponent,
     BookingDetailsComponent,
-    ViewBookingComponent
+    ViewBookingComponent,
+    AllFlightsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [DatePipe,HttpClientModule],
   bootstrap: [AppComponent]

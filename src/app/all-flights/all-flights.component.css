@@ -1,0 +1,8 @@
+.my-pagination /deep/ .ngx-pagination {
+    color: white;
+}
+.my-pagination /deep/ .ngx-pagination :hover {
+    
+    background: rgb(83, 78, 78);
+    
+  }

@@ -15,6 +15,7 @@ import { BookingDetailsComponent } from './booking-details/booking-details.compo
 import { ViewBookingComponent } from './view-booking/view-booking.component';
 import { AuthGuard } from 'src/auth.guard';
 import { AdminAuthGuard } from 'src/admin-auth.guard';
+import { AllFlightsComponent } from './all-flights/all-flights.component';
 
 const routes: Routes = [
   {

@@ -1,0 +1,41 @@
+<section id="menu" class="menu section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>All Flights</h2>
+        <p>Check All Flights Here</p>
+      </div>
+
+      <table class="table table-dark table-striped table-hover h6" >
+        <thead>
+          <tr style="color: #cda45e;">
+            <th scope="col">Flight Name</th>
+            <th scope="col">Source</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Price</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+           </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flight of Flights | paginate: { itemsPerPage: 4, currentPage: p }" >
+            
+            <td style="color: rgb(187, 189, 184);">{{flight.flightname}}</td>
+            <td style="color: rgb(187, 189, 184);">{{flight.source}}</td>
+            <td style="color: rgb(187, 189, 184);">{{flight.destination}}</td>
+            <td style="color: rgb(187, 189, 184);">{{flight.price}}</td>
+            <td style="color: rgb(187, 189, 184);">{{flight.date}}</td>
+            <td style="color: rgb(187, 189, 184);">{{flight.time}}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="clearfix">
+        <pagination-controls class="my-pagination" (pageChange)="p = $event" ></pagination-controls>
+      </div>
+    </div>
+  </section><!-- End All Flight Section -->
