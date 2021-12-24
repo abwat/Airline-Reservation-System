@@ -1,6 +1,8 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../service/login.service';
+import { FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +15,18 @@ export class HomeComponent implements OnInit {
   SeachedFlights:any;
   isSearched:boolean=true;
   isError=false;
-  constructor(private service: LoginService,public datapipe:DatePipe) { }
+  SearchForm={
+    source:'',
+    destination:'',
+    date:''
+  };
+  
+  constructor(private service: LoginService,public datapipe:DatePipe) {
+    // this.SearchForm = new FormGroup({
+    //   source: new FormControl('',Validators.required),
+    //   destination: new FormControl(''),
+    // });
+   }
 
   ngOnInit(): void {
     localStorage.clear();
@@ -23,6 +36,10 @@ export class HomeComponent implements OnInit {
       console.log(data);      
     })
 
+  }
+  GetFormData(){
+    console.log('form data', this.SearchForm);
+    
   }
   SeachFlight(source: any, destination: any, date: any)
   {

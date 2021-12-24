@@ -144,13 +144,12 @@
             <p>Search a Flight</p>
           </div>
   
-          <form role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+          <form #f="ngForm" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
             <div class="row">
               <div class="col-lg-4 col-md-6 form-group">
-                <!-- <input type="text" name="source" class="form-control" id="source" placeholder="Source Station" #source> -->
-                
-                <input type="text" list="source" class="form-control" placeholder="Source" style="color: #ffffff;" #source>
-                <datalist id="source">
+                <input list="source" required [(ngModel)]="SearchForm.source" #source="ngModel" name="source" type="text" class="form-control" placeholder="Source*" value=""/>
+               
+                 <datalist id="source">
                      <option style="color: #0a0907;" value="Mumbai">Mumbai</option>
                      <option style="color: #0a0907;" value="Delhi">Delhi</option>
                      <option style="color: #0a0907;" value="Bangalore">Bangalore</option>
@@ -183,14 +182,22 @@
 
 
                 </datalist>
-            
-                
-                <div class="validate"></div>
+
+                <div class="alert alert-danger" *ngIf="source.touched && source.invalid"> 
+                  <div *ngIf="source.errors?.['required']">Source is required</div>
+                </div>
               </div>
+
+              
+
+               
+
+
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
                 <!-- <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination Station" #destination > -->
                 
-                <input type="text" list="destination" class="form-control" placeholder="Destination" style="color: #ffffff;" #destination>
+                <input list="destination" required [(ngModel)]="SearchForm.destination" #destination="ngModel" name="destination" type="text" class="form-control" placeholder="Destination*" value=""  />
+               
                 <datalist id="destination">
                      <option style="color: #0a0907;" value="Mumbai">Mumbai</option>
                      <option style="color: #0a0907;" value="Delhi">Delhi</option>
@@ -226,14 +233,25 @@
                     </datalist>
                 
                 
-                <div class="validate"></div>
+                    <div class="alert alert-danger" *ngIf="destination.touched && destination.invalid"> 
+                      <div *ngIf="destination.errors?.['required']">Destination is required</div>
+                    </div>
+      
+
+
+                
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                <input required type="date" class="form-control" name="date" id="date" placeholder="Journey Date" #date>
-                <div class="validate"></div>
+                <input required [(ngModel)]="SearchForm.date" #date="ngModel" name="date" type="date" class="form-control" name="date" id="date" placeholder="Journey Date">
+                
+
+                <div class="alert alert-danger" *ngIf="date.touched && date.invalid"> 
+                  <div *ngIf="date.errors?.['required']">Date is required</div>
+                </div>
+
               </div>
               
-              <div class="text-center py-5 pt-5 h4"><button type="submit" (click)="SeachFlight(source.value, destination.value, date.value)">Search a Flight</button></div>
+              <div class="text-center py-5 pt-5 h4"><button class="btn btn-warning" [disabled]='f.invalid' (click)="SeachFlight(source.value, destination.value, date.value)">Search a Flight</button></div>
             </div>
 
           </form>

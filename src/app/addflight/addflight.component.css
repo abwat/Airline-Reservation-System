@@ -62,3 +62,7 @@ p,label{
     filter: invert(70%);
     /* background-color: #958c7c */
 }
+
+.alert-danger{
+    font-size: 15px;
+}

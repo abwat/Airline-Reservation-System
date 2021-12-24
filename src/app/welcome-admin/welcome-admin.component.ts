@@ -21,6 +21,11 @@ export class WelcomeAdminComponent implements OnInit {
       
     }
 
+    SearchForm={
+      source:'',
+      destination:'',
+      date:''
+    };
     
   addflight = false;
   onAdd()

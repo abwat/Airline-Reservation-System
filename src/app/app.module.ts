@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { WelcomeAdminComponent } from './welcome-admin/welcome-admin.component';
 import { AddflightComponent } from './addflight/addflight.component';
@@ -44,7 +44,8 @@ import { ViewBookingComponent } from './view-booking/view-booking.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [DatePipe,HttpClientModule],
   bootstrap: [AppComponent]

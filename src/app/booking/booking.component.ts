@@ -14,6 +14,13 @@ export class BookingComponent implements OnInit {
   SeachedFlights: any;
   isError: boolean=false;
   
+  SearchForm={
+    source:'',
+    destination:'',
+    date:''
+  };
+
+
   constructor(private router: Router,private service :LoginService,private userService: UserService) { }
 
   SearchFlight(source:string, destination:string,date:any){
@@ -30,15 +37,19 @@ export class BookingComponent implements OnInit {
 
   BookFlight(flightid:any,Bseat:any,Eseat:any)
   {
-   // console.log("fllightid",flightid,Bseat,Eseat);
+   if(Bseat >0 || Eseat>0)
+   {
+     // console.log("fllightid",flightid,Bseat,Eseat);
      localStorage.setItem("FlightId",flightid);
      localStorage.setItem("Bseat",Bseat);
      localStorage.setItem("Eseat",Eseat);
     //console.log("UserId",UserId,UserEmail,UserPassword);
-
-    
-
     this.router.navigate(['/bookingDetails']);
+   }
+   else
+   {
+     alert("Please Select Seat");
+   }
   }
   ngOnInit(): void {
   }

@@ -22,16 +22,19 @@
       <div class="container-fluid px-1 py-5 mx-auto" style="margin-bottom: 70px;">
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                <h3 style="color: white;">Search a flight</h3>
+                <h3 style="
+                color: #f8dfdf; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; line-height: 48px; margin: 0;              
+                ">Search a Flight</h3>
                 <div class="Scard" >
                     
-                    <form class="form-card" >
+                    <form #f="ngForm"  class="form-card" >
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-4 flex-column d-flex">
                                 <label for="source">Source</label>
                                  <!-- <input #source type="text" name="source" id="source"> -->
                                  
-                                 <input type="text" list="source" class="form-control" placeholder="Source" style="color: #000000;" #source>
+                                 <input list="source" required [(ngModel)]="SearchForm.source" #source="ngModel" name="source" type="text" class="form-control" placeholder="Source*" value=""/>
+               
                                  <datalist id="source">
                                       <option style="color: #0a0907;" value="Mumbai">Mumbai</option>
                                       <option style="color: #0a0907;" value="Delhi">Delhi</option>
@@ -66,7 +69,9 @@
                                  
                                     </datalist>
                  
-                      
+                                    <div class="alert alert-danger" *ngIf="source.touched && source.invalid"> 
+                                        <div *ngIf="source.errors?.['required']">Source is required</div>
+                                      </div>
                            
                                 </div>
         
@@ -74,7 +79,8 @@
                                 <label for="dest">Destinition</label>
                                 <!-- <input #dest type="text" name="dest" id="dest"> -->
                            
-                                <input type="text" list="destination" class="form-control" placeholder="Destination" style="color: #000000;" #dest>
+                                <input list="destination" required [(ngModel)]="SearchForm.destination" #dest="ngModel" name="destination" type="text" class="form-control" placeholder="Destination*" value=""  />
+               
                 <datalist id="destination">
                      <option style="color: #0a0907;" value="Mumbai">Mumbai</option>
                      <option style="color: #0a0907;" value="Delhi">Delhi</option>
@@ -107,15 +113,25 @@
                      <option style="color: #0a0907;" value="Port Blair">Port Blair</option>
 
                     </datalist>
-                
+                    
+                    <div class="alert alert-danger" *ngIf="dest.touched && dest.invalid"> 
+                        <div *ngIf="dest.errors?.['required']">Destination is required</div>
+                      </div>
                            
                             </div>
 
                             <div class="form-group col-sm-4 flex-column d-flex">
                                 <label for="date">Date</label>
-                                <input #date type="date" name="date" id="date">
+                                <input required [(ngModel)]="SearchForm.date" #date="ngModel" name="date" type="date" class="form-control" name="date" id="date" placeholder="Journey Date">
+                            
+                                <div class="alert alert-danger" *ngIf="date.touched && date.invalid"> 
+                                    <div *ngIf="date.errors?.['required']">Date is required</div>
+                                  </div>
+                            
                             </div>
-                            <button  class="btn btn-primary" (click)="SearchFlight(source.value, dest.value,date.value)">
+                                
+                            
+                            <button  class="btn btn-primary" [disabled]='f.invalid' (click)="SearchFlight(source.value, dest.value,date.value)">
                                 Search flights
                             </button>
                         </div>
@@ -228,12 +244,12 @@
             <div class="row">
                 <div class="col-md-4" >
                     <label for="Bseat" style="margin-left: 17px;">Buisness seat</label>
-                    <input #Bseat style="width: 60px; margin: 10px 10px 10px 10px;" id="BSeat" type="number" value="0" >
+                    <input min="0" #Bseat style="width: 60px; margin: 10px 10px 10px 10px;" id="BSeat" type="number" value="0" >
                     
                 </div>
                 <div class="col-md-4" >
                     <label for="Eseat" style="margin-left: 10px;">Economy seat</label>
-                    <input #Eseat style="width: 60px; margin: 10px;" id="Eseat" type="number" value="0" >
+                    <input min="0" #Eseat style="width: 60px; margin: 10px;" id="Eseat" type="number" value="0" >
                     
                 </div>
                 <div class="col-md-4" >

@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<form #f="ngForm">
+
+
     <br>
    <h3> <p style="align-items: center;">Add Flight</p></h3>
     <div class = "bookingformbox">
         <div class="booking-form" >
             <label>Flight Name</label>
             <!-- <input type="text" class="form-control" style="color: #958c7c;" placeholder="Flight Name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"  required #name> -->
-            <input type="text" list="flightName" class="form-control" placeholder="Flight Name" style="color: #958c7c;" #name> 
+            <input type="text" list="flightName" required [(ngModel)]="AddFlight.flightName" #name="ngModel" name="flightName" class="form-control" placeholder="Flight Name" style="color: #958c7c;"> 
             <datalist id="flightName">
                 <option style="color: #0a0907;" value="AirAsia">AirAsia</option>
                 <option style="color: #0a0907;" value="Air India">Air India</option>
@@ -24,13 +18,15 @@
                 <option style="color: #0a0907;" value="Vistara">Vistara</option> 
             </datalist>
             
-
+            <div class="alert alert-danger" *ngIf="name.touched && name.invalid"> 
+                <div *ngIf="name.errors?.['required']">Flight Name is required</div>
+              </div>
 
 
             <label>Source</label>
             <!-- <input type="text" class="form-control" style="color: #958c7c;" placeholder="Source" required onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #src> -->
             
-            <input type="text" list="source" class="form-control" placeholder="Source" style="color: #958c7c;" #src>
+            <input type="text" list="source" required [(ngModel)]="AddFlight.source" #src="ngModel" name="source" class="form-control" placeholder="Source" style="color: #958c7c;" >
                 <datalist id="source">
                     <option style="color: #0a0907;" value="Mumbai">Mumbai</option>
                     <option style="color: #0a0907;" value="Delhi">Delhi</option>
@@ -64,11 +60,15 @@
                         
                 </datalist>
                 
+                    <div class="alert alert-danger" *ngIf="src.touched && src.invalid"> 
+                        <div *ngIf="src.errors?.['required']">Source is required</div>
+                    </div>
+                  
 
             <label>Destination</label>
             <!-- <input type="text" class="form-control" style="color: #958c7c;" placeholder="Destination" required onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" #dest> -->
             
-            <input type="text" list="destination" class="form-control" placeholder="Destination" style="color: #958c7c;" #dest>
+            <input type="text" list="destination" required [(ngModel)]="AddFlight.destination" #dest="ngModel" name="destination" class="form-control" placeholder="Destination" style="color: #958c7c;" >
                 <datalist id="destination">
                     <option style="color: #0a0907;" value="Mumbai">Mumbai</option>
                     <option style="color: #0a0907;" value="Delhi">Delhi</option>
@@ -103,37 +103,70 @@
                        
                 </datalist>
                 
+                <div class="alert alert-danger" *ngIf="dest.touched && dest.invalid"> 
+                    <div *ngIf="dest.errors?.['required']">Source is required</div>
+                </div>
 
             <label>Status</label>
             <!-- <input type="" id="status" class="form-control" style="color: #958c7c;" placeholder="Status" required #status> -->
-            <input type="text" list="status" class="form-control" placeholder="Status" style="color: #958c7c;" #status>
+            <input type="text" list="status" required [(ngModel)]="AddFlight.status" #status="ngModel" name="status" class="form-control" placeholder="Status" style="color: #958c7c;">
             <datalist id="status">
                 <option style="color: #0a0907;" value="OnLane">OnLane</option>
                 <option style="color: #0a0907;" value="In Air">In Air</option>
                 <option style="color: #0a0907;" value="Scheduled">Scheduled</option>
                 <option style="color: #0a0907;" value="Landed">Landed</option>
               </datalist>
+
+              <div class="alert alert-danger" *ngIf="status.touched && status.invalid"> 
+                <div *ngIf="status.errors?.['required']">Source is required</div>
+            </div>
             
             <label>Date</label>
-            <input type="date" class="form-control" style="color: #958c7c;" placeholder="Date" required #date>
-            <label>Time</label>
-            <input type="time" class="form-control" style="color: #958c7c;" placeholder="Time" required #time>
-            <label>Price</label>
-            <input type="number" class="form-control" style="color: #958c7c;" placeholder="Price" min = "1" required #price>
+            <input type="date" required [(ngModel)]="AddFlight.date" #date="ngModel" name="date" class="form-control" style="color: #958c7c;" placeholder="Date" required >
+            <div class="alert alert-danger" *ngIf="date.touched && date.invalid"> 
+                <div *ngIf="date.errors?.['required']">Date is required</div>
+            </div>
+
             
+            <label>Time</label>
+            <input type="time" required [(ngModel)]="AddFlight.time" #time="ngModel" name="time" class="form-control" style="color: #958c7c;" placeholder="Time" required >
+            
+            <div class="alert alert-danger" *ngIf="time.touched && time.invalid"> 
+                <div *ngIf="time.errors?.['required']">Time is required</div>
+            </div>
+            
+            <label>Price</label>
+            <input min="0" type="number" required [(ngModel)]="AddFlight.price" #price="ngModel" name="price" class="form-control" style="color: #958c7c;" placeholder="Price" min = "1" required >
+            
+            <div class="alert alert-danger" *ngIf="price.touched && price.invalid"> 
+                <div *ngIf="price.errors?.['required']">Price is required</div>
+            </div>
+
             <div class="inputgrp1">
                 <label id = "label1">Economy Seats</label>
-                <input type="number" class="form-control" style="color: #958c7c;" #eseat>
+                <input min="0" type="number" required [(ngModel)]="AddFlight.eseat" #eseat="ngModel" name="eseat" class="form-control" style="color: #958c7c;" >
+                <div class="alert alert-danger" *ngIf="eseat.touched && eseat.invalid"> 
+                    <div *ngIf="eseat.errors?.['required']">Enter Economy Seat</div>
+                </div>
+            
             </div>
             <div class="inputgrp1">
                 <label id = "label1">Business Seats</label>
-                <input type="number" class="form-control" style="color: #958c7c;" #bseat>
+                <input min="0" type="number" required [(ngModel)]="AddFlight.bseat" #bseat="ngModel" name="bseat" class="form-control" style="color: #958c7c;" >
+                
+                <div class="alert alert-danger" *ngIf="bseat.touched && bseat.invalid"> 
+                    <div *ngIf="bseat.errors?.['required']">Enter Business Seat</div>
+                </div>
+            
+            
             </div>
             
             <div class="flights">
-                <button class="btn btn-primary" type="submit" (click)="Addflight(name.value,src.value,dest.value,status.value,date.value,price.value,eseat.value,bseat.value,time.value)">Add Flight</button>
+                <button class="btn btn-primary" type="submit" [disabled]='f.invalid' (click)="Addflight(name.value,src.value,dest.value,status.value,date.value,price.value,eseat.value,bseat.value,time.value)">Add Flight</button>
             </div>
         </div>
     </div>
-</body>
-</html>
+
+
+
+</form>

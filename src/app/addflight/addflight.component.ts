@@ -9,6 +9,18 @@ import { AdminServiceService } from '../service/admin-service.service';
 })
 export class AddflightComponent implements OnInit {
 
+  AddFlight={
+    flightName:'',
+    source:'',
+    destination:'',
+    date:'',
+    status:'',
+    time:'',
+    price:'',
+    eseat:'',
+    bseat:'',
+  };
+
   constructor(private service: AdminServiceService,private router: Router) { }
 
   ngOnInit(): void {
