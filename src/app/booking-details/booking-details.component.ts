@@ -64,7 +64,7 @@ export class BookingDetailsComponent implements OnInit {
     this.service.BookFlight(this.user.emailId,this.UserPassword,this.user.userId,this.flight.flightid,Seat)
     .subscribe(data=>{
       console.log(data);
-      alert("Booking SuccessFul");
+      alert("Booking Successful");
       this.route.navigate(['/booking']);
     })
   }

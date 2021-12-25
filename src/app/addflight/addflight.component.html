@@ -104,7 +104,7 @@
                 </datalist>
                 
                 <div class="alert alert-danger" *ngIf="dest.touched && dest.invalid"> 
-                    <div *ngIf="dest.errors?.['required']">Source is required</div>
+                    <div *ngIf="dest.errors?.['required']">Destination is required</div>
                 </div>
 
             <label>Status</label>
@@ -118,7 +118,7 @@
               </datalist>
 
               <div class="alert alert-danger" *ngIf="status.touched && status.invalid"> 
-                <div *ngIf="status.errors?.['required']">Source is required</div>
+                <div *ngIf="status.errors?.['required']">Status is required</div>
             </div>
             
             <label>Date</label>
